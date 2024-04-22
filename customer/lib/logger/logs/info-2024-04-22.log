@@ -1,0 +1,980 @@
+2024-04-22 05:38:39 - 315e0595-cea5-4e97-a07e-091024c241d6 - error: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/utills/response/constrant.ts[0m:[93m12[0m:[93m3[0m - [91merror[0m[90m TS1005: [0m',' expected.
+
+[7m12[0m   add: (labal: string) => {
+[7m  [0m [91m  ~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/utills/response/constrant.ts[0m:[93m12[0m:[93m3[0m - [91merror[0m[90m TS1005: [0m',' expected.
+
+[7m12[0m   add: (labal: string) => {
+[7m  [0m [91m  ~~~[0m
+
+    at createTSError (C:\Users\ditsd\AppData\Roaming\nvm\v20.9.0\node_modules\ts-node\src\index.ts:859:12)
+    at reportTSError (C:\Users\ditsd\AppData\Roaming\nvm\v20.9.0\node_modules\ts-node\src\index.ts:863:19)
+    at getOutput (C:\Users\ditsd\AppData\Roaming\nvm\v20.9.0\node_modules\ts-node\src\index.ts:1077:36)
+    at Object.compile (C:\Users\ditsd\AppData\Roaming\nvm\v20.9.0\node_modules\ts-node\src\index.ts:1433:41)
+    at Module.m._compile (C:\Users\ditsd\AppData\Roaming\nvm\v20.9.0\node_modules\ts-node\src\index.ts:1617:30)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1295:10)
+    at Object.require.extensions.<computed> [as .ts] (C:\Users\ditsd\AppData\Roaming\nvm\v20.9.0\node_modules\ts-node\src\index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1091:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:938:12)
+    at Module.require (node:internal/modules/cjs/loader:1115:19) {
+  "error": {
+    "diagnosticCodes": [
+      1005
+    ]
+  },
+  "stack": "TSError: ⨯ Unable to compile TypeScript:\n\u001b[96msrc/utills/response/constrant.ts\u001b[0m:\u001b[93m12\u001b[0m:\u001b[93m3\u001b[0m - \u001b[91merror\u001b[0m\u001b[90m TS1005: \u001b[0m',' expected.\r\n\r\n\u001b[7m12\u001b[0m   add: (labal: string) => {\r\n\u001b[7m  \u001b[0m \u001b[91m  ~~~\u001b[0m\r\n\n    at createTSError (C:\\Users\\ditsd\\AppData\\Roaming\\nvm\\v20.9.0\\node_modules\\ts-node\\src\\index.ts:859:12)\n    at reportTSError (C:\\Users\\ditsd\\AppData\\Roaming\\nvm\\v20.9.0\\node_modules\\ts-node\\src\\index.ts:863:19)\n    at getOutput (C:\\Users\\ditsd\\AppData\\Roaming\\nvm\\v20.9.0\\node_modules\\ts-node\\src\\index.ts:1077:36)\n    at Object.compile (C:\\Users\\ditsd\\AppData\\Roaming\\nvm\\v20.9.0\\node_modules\\ts-node\\src\\index.ts:1433:41)\n    at Module.m._compile (C:\\Users\\ditsd\\AppData\\Roaming\\nvm\\v20.9.0\\node_modules\\ts-node\\src\\index.ts:1617:30)\n    at Module._extensions..js (node:internal/modules/cjs/loader:1295:10)\n    at Object.require.extensions.<computed> [as .ts] (C:\\Users\\ditsd\\AppData\\Roaming\\nvm\\v20.9.0\\node_modules\\ts-node\\src\\index.ts:1621:12)\n    at Module.load (node:internal/modules/cjs/loader:1091:32)\n    at Function.Module._load (node:internal/modules/cjs/loader:938:12)\n    at Module.require (node:internal/modules/cjs/loader:1115:19)",
+  "exception": true,
+  "date": "Mon Apr 22 2024 11:08:39 GMT+0530 (India Standard Time)",
+  "process": {
+    "pid": 1592,
+    "uid": null,
+    "gid": null,
+    "cwd": "C:\\Users\\ditsd\\Desktop\\busTicketBooking\\customer",
+    "execPath": "C:\\Program Files\\nodejs\\node.exe",
+    "version": "v20.9.0",
+    "argv": [
+      "C:\\Program Files\\nodejs\\node_modules\\ts-node\\dist\\bin.js",
+      "C:\\Users\\ditsd\\Desktop\\busTicketBooking\\customer\\index.ts"
+    ],
+    "memoryUsage": {
+      "rss": 226099200,
+      "heapTotal": 179523584,
+      "heapUsed": 150178360,
+      "external": 6647283,
+      "arrayBuffers": 3630843
+    }
+  },
+  "os": {
+    "loadavg": [
+      0,
+      0,
+      0
+    ],
+    "uptime": 431476
+  },
+  "trace": [
+    {
+      "column": 12,
+      "file": "C:\\Users\\ditsd\\AppData\\Roaming\\nvm\\v20.9.0\\node_modules\\ts-node\\src\\index.ts",
+      "function": "createTSError",
+      "line": 859,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 19,
+      "file": "C:\\Users\\ditsd\\AppData\\Roaming\\nvm\\v20.9.0\\node_modules\\ts-node\\src\\index.ts",
+      "function": "reportTSError",
+      "line": 863,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 36,
+      "file": "C:\\Users\\ditsd\\AppData\\Roaming\\nvm\\v20.9.0\\node_modules\\ts-node\\src\\index.ts",
+      "function": "getOutput",
+      "line": 1077,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 41,
+      "file": "C:\\Users\\ditsd\\AppData\\Roaming\\nvm\\v20.9.0\\node_modules\\ts-node\\src\\index.ts",
+      "function": "Object.compile",
+      "line": 1433,
+      "method": "compile",
+      "native": false
+    },
+    {
+      "column": 30,
+      "file": "C:\\Users\\ditsd\\AppData\\Roaming\\nvm\\v20.9.0\\node_modules\\ts-node\\src\\index.ts",
+      "function": "Module.m._compile",
+      "line": 1617,
+      "method": "_compile",
+      "native": false
+    },
+    {
+      "column": 10,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Module._extensions..js",
+      "line": 1295,
+      "method": ".js",
+      "native": false
+    },
+    {
+      "column": 12,
+      "file": "C:\\Users\\ditsd\\AppData\\Roaming\\nvm\\v20.9.0\\node_modules\\ts-node\\src\\index.ts",
+      "function": "Object.require.extensions.<computed> [as .ts]",
+      "line": 1621,
+      "method": "ts]",
+      "native": false
+    },
+    {
+      "column": 32,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Module.load",
+      "line": 1091,
+      "method": "load",
+      "native": false
+    },
+    {
+      "column": 12,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Module._load",
+      "line": 938,
+      "method": "_load",
+      "native": false
+    },
+    {
+      "column": 19,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Module.require",
+      "line": 1115,
+      "method": "require",
+      "native": false
+    }
+  ]
+}
+2024-04-22 05:38:50 - 5cd01708-55e2-489b-80ae-a5569c524e59 - error: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/utills/response/constrant.ts[0m:[93m12[0m:[93m3[0m - [91merror[0m[90m TS1005: [0m',' expected.
+
+[7m12[0m   add: (labal: string) => {
+[7m  [0m [91m  ~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/utills/response/constrant.ts[0m:[93m12[0m:[93m3[0m - [91merror[0m[90m TS1005: [0m',' expected.
+
+[7m12[0m   add: (labal: string) => {
+[7m  [0m [91m  ~~~[0m
+
+    at createTSError (C:\Users\ditsd\AppData\Roaming\nvm\v20.9.0\node_modules\ts-node\src\index.ts:859:12)
+    at reportTSError (C:\Users\ditsd\AppData\Roaming\nvm\v20.9.0\node_modules\ts-node\src\index.ts:863:19)
+    at getOutput (C:\Users\ditsd\AppData\Roaming\nvm\v20.9.0\node_modules\ts-node\src\index.ts:1077:36)
+    at Object.compile (C:\Users\ditsd\AppData\Roaming\nvm\v20.9.0\node_modules\ts-node\src\index.ts:1433:41)
+    at Module.m._compile (C:\Users\ditsd\AppData\Roaming\nvm\v20.9.0\node_modules\ts-node\src\index.ts:1617:30)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1295:10)
+    at Object.require.extensions.<computed> [as .ts] (C:\Users\ditsd\AppData\Roaming\nvm\v20.9.0\node_modules\ts-node\src\index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1091:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:938:12)
+    at Module.require (node:internal/modules/cjs/loader:1115:19) {
+  "error": {
+    "diagnosticCodes": [
+      1005
+    ]
+  },
+  "stack": "TSError: ⨯ Unable to compile TypeScript:\n\u001b[96msrc/utills/response/constrant.ts\u001b[0m:\u001b[93m12\u001b[0m:\u001b[93m3\u001b[0m - \u001b[91merror\u001b[0m\u001b[90m TS1005: \u001b[0m',' expected.\r\n\r\n\u001b[7m12\u001b[0m   add: (labal: string) => {\r\n\u001b[7m  \u001b[0m \u001b[91m  ~~~\u001b[0m\r\n\n    at createTSError (C:\\Users\\ditsd\\AppData\\Roaming\\nvm\\v20.9.0\\node_modules\\ts-node\\src\\index.ts:859:12)\n    at reportTSError (C:\\Users\\ditsd\\AppData\\Roaming\\nvm\\v20.9.0\\node_modules\\ts-node\\src\\index.ts:863:19)\n    at getOutput (C:\\Users\\ditsd\\AppData\\Roaming\\nvm\\v20.9.0\\node_modules\\ts-node\\src\\index.ts:1077:36)\n    at Object.compile (C:\\Users\\ditsd\\AppData\\Roaming\\nvm\\v20.9.0\\node_modules\\ts-node\\src\\index.ts:1433:41)\n    at Module.m._compile (C:\\Users\\ditsd\\AppData\\Roaming\\nvm\\v20.9.0\\node_modules\\ts-node\\src\\index.ts:1617:30)\n    at Module._extensions..js (node:internal/modules/cjs/loader:1295:10)\n    at Object.require.extensions.<computed> [as .ts] (C:\\Users\\ditsd\\AppData\\Roaming\\nvm\\v20.9.0\\node_modules\\ts-node\\src\\index.ts:1621:12)\n    at Module.load (node:internal/modules/cjs/loader:1091:32)\n    at Function.Module._load (node:internal/modules/cjs/loader:938:12)\n    at Module.require (node:internal/modules/cjs/loader:1115:19)",
+  "exception": true,
+  "date": "Mon Apr 22 2024 11:08:50 GMT+0530 (India Standard Time)",
+  "process": {
+    "pid": 22156,
+    "uid": null,
+    "gid": null,
+    "cwd": "C:\\Users\\ditsd\\Desktop\\busTicketBooking\\customer",
+    "execPath": "C:\\Program Files\\nodejs\\node.exe",
+    "version": "v20.9.0",
+    "argv": [
+      "C:\\Program Files\\nodejs\\node_modules\\ts-node\\dist\\bin.js",
+      "C:\\Users\\ditsd\\Desktop\\busTicketBooking\\customer\\index.ts"
+    ],
+    "memoryUsage": {
+      "rss": 228630528,
+      "heapTotal": 179261440,
+      "heapUsed": 150099936,
+      "external": 6647339,
+      "arrayBuffers": 3630899
+    }
+  },
+  "os": {
+    "loadavg": [
+      0,
+      0,
+      0
+    ],
+    "uptime": 431487.734
+  },
+  "trace": [
+    {
+      "column": 12,
+      "file": "C:\\Users\\ditsd\\AppData\\Roaming\\nvm\\v20.9.0\\node_modules\\ts-node\\src\\index.ts",
+      "function": "createTSError",
+      "line": 859,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 19,
+      "file": "C:\\Users\\ditsd\\AppData\\Roaming\\nvm\\v20.9.0\\node_modules\\ts-node\\src\\index.ts",
+      "function": "reportTSError",
+      "line": 863,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 36,
+      "file": "C:\\Users\\ditsd\\AppData\\Roaming\\nvm\\v20.9.0\\node_modules\\ts-node\\src\\index.ts",
+      "function": "getOutput",
+      "line": 1077,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 41,
+      "file": "C:\\Users\\ditsd\\AppData\\Roaming\\nvm\\v20.9.0\\node_modules\\ts-node\\src\\index.ts",
+      "function": "Object.compile",
+      "line": 1433,
+      "method": "compile",
+      "native": false
+    },
+    {
+      "column": 30,
+      "file": "C:\\Users\\ditsd\\AppData\\Roaming\\nvm\\v20.9.0\\node_modules\\ts-node\\src\\index.ts",
+      "function": "Module.m._compile",
+      "line": 1617,
+      "method": "_compile",
+      "native": false
+    },
+    {
+      "column": 10,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Module._extensions..js",
+      "line": 1295,
+      "method": ".js",
+      "native": false
+    },
+    {
+      "column": 12,
+      "file": "C:\\Users\\ditsd\\AppData\\Roaming\\nvm\\v20.9.0\\node_modules\\ts-node\\src\\index.ts",
+      "function": "Object.require.extensions.<computed> [as .ts]",
+      "line": 1621,
+      "method": "ts]",
+      "native": false
+    },
+    {
+      "column": 32,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Module.load",
+      "line": 1091,
+      "method": "load",
+      "native": false
+    },
+    {
+      "column": 12,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Module._load",
+      "line": 938,
+      "method": "_load",
+      "native": false
+    },
+    {
+      "column": 19,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Module.require",
+      "line": 1115,
+      "method": "require",
+      "native": false
+    }
+  ]
+}
+2024-04-22 05:39:00 - 4c282a05-14ff-4692-8177-4644e896feee - error: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/utills/response/constrant.ts[0m:[93m12[0m:[93m3[0m - [91merror[0m[90m TS1005: [0m',' expected.
+
+[7m12[0m   add: (labal: string) => {
+[7m  [0m [91m  ~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/utills/response/constrant.ts[0m:[93m12[0m:[93m3[0m - [91merror[0m[90m TS1005: [0m',' expected.
+
+[7m12[0m   add: (labal: string) => {
+[7m  [0m [91m  ~~~[0m
+
+    at createTSError (C:\Users\ditsd\AppData\Roaming\nvm\v20.9.0\node_modules\ts-node\src\index.ts:859:12)
+    at reportTSError (C:\Users\ditsd\AppData\Roaming\nvm\v20.9.0\node_modules\ts-node\src\index.ts:863:19)
+    at getOutput (C:\Users\ditsd\AppData\Roaming\nvm\v20.9.0\node_modules\ts-node\src\index.ts:1077:36)
+    at Object.compile (C:\Users\ditsd\AppData\Roaming\nvm\v20.9.0\node_modules\ts-node\src\index.ts:1433:41)
+    at Module.m._compile (C:\Users\ditsd\AppData\Roaming\nvm\v20.9.0\node_modules\ts-node\src\index.ts:1617:30)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1295:10)
+    at Object.require.extensions.<computed> [as .ts] (C:\Users\ditsd\AppData\Roaming\nvm\v20.9.0\node_modules\ts-node\src\index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1091:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:938:12)
+    at Module.require (node:internal/modules/cjs/loader:1115:19) {
+  "error": {
+    "diagnosticCodes": [
+      1005
+    ]
+  },
+  "stack": "TSError: ⨯ Unable to compile TypeScript:\n\u001b[96msrc/utills/response/constrant.ts\u001b[0m:\u001b[93m12\u001b[0m:\u001b[93m3\u001b[0m - \u001b[91merror\u001b[0m\u001b[90m TS1005: \u001b[0m',' expected.\r\n\r\n\u001b[7m12\u001b[0m   add: (labal: string) => {\r\n\u001b[7m  \u001b[0m \u001b[91m  ~~~\u001b[0m\r\n\n    at createTSError (C:\\Users\\ditsd\\AppData\\Roaming\\nvm\\v20.9.0\\node_modules\\ts-node\\src\\index.ts:859:12)\n    at reportTSError (C:\\Users\\ditsd\\AppData\\Roaming\\nvm\\v20.9.0\\node_modules\\ts-node\\src\\index.ts:863:19)\n    at getOutput (C:\\Users\\ditsd\\AppData\\Roaming\\nvm\\v20.9.0\\node_modules\\ts-node\\src\\index.ts:1077:36)\n    at Object.compile (C:\\Users\\ditsd\\AppData\\Roaming\\nvm\\v20.9.0\\node_modules\\ts-node\\src\\index.ts:1433:41)\n    at Module.m._compile (C:\\Users\\ditsd\\AppData\\Roaming\\nvm\\v20.9.0\\node_modules\\ts-node\\src\\index.ts:1617:30)\n    at Module._extensions..js (node:internal/modules/cjs/loader:1295:10)\n    at Object.require.extensions.<computed> [as .ts] (C:\\Users\\ditsd\\AppData\\Roaming\\nvm\\v20.9.0\\node_modules\\ts-node\\src\\index.ts:1621:12)\n    at Module.load (node:internal/modules/cjs/loader:1091:32)\n    at Function.Module._load (node:internal/modules/cjs/loader:938:12)\n    at Module.require (node:internal/modules/cjs/loader:1115:19)",
+  "exception": true,
+  "date": "Mon Apr 22 2024 11:09:00 GMT+0530 (India Standard Time)",
+  "process": {
+    "pid": 4968,
+    "uid": null,
+    "gid": null,
+    "cwd": "C:\\Users\\ditsd\\Desktop\\busTicketBooking\\customer",
+    "execPath": "C:\\Program Files\\nodejs\\node.exe",
+    "version": "v20.9.0",
+    "argv": [
+      "C:\\Program Files\\nodejs\\node_modules\\ts-node\\dist\\bin.js",
+      "C:\\Users\\ditsd\\Desktop\\busTicketBooking\\customer\\index.ts"
+    ],
+    "memoryUsage": {
+      "rss": 224698368,
+      "heapTotal": 178212864,
+      "heapUsed": 150647632,
+      "external": 6647339,
+      "arrayBuffers": 3630899
+    }
+  },
+  "os": {
+    "loadavg": [
+      0,
+      0,
+      0
+    ],
+    "uptime": 431497.515
+  },
+  "trace": [
+    {
+      "column": 12,
+      "file": "C:\\Users\\ditsd\\AppData\\Roaming\\nvm\\v20.9.0\\node_modules\\ts-node\\src\\index.ts",
+      "function": "createTSError",
+      "line": 859,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 19,
+      "file": "C:\\Users\\ditsd\\AppData\\Roaming\\nvm\\v20.9.0\\node_modules\\ts-node\\src\\index.ts",
+      "function": "reportTSError",
+      "line": 863,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 36,
+      "file": "C:\\Users\\ditsd\\AppData\\Roaming\\nvm\\v20.9.0\\node_modules\\ts-node\\src\\index.ts",
+      "function": "getOutput",
+      "line": 1077,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 41,
+      "file": "C:\\Users\\ditsd\\AppData\\Roaming\\nvm\\v20.9.0\\node_modules\\ts-node\\src\\index.ts",
+      "function": "Object.compile",
+      "line": 1433,
+      "method": "compile",
+      "native": false
+    },
+    {
+      "column": 30,
+      "file": "C:\\Users\\ditsd\\AppData\\Roaming\\nvm\\v20.9.0\\node_modules\\ts-node\\src\\index.ts",
+      "function": "Module.m._compile",
+      "line": 1617,
+      "method": "_compile",
+      "native": false
+    },
+    {
+      "column": 10,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Module._extensions..js",
+      "line": 1295,
+      "method": ".js",
+      "native": false
+    },
+    {
+      "column": 12,
+      "file": "C:\\Users\\ditsd\\AppData\\Roaming\\nvm\\v20.9.0\\node_modules\\ts-node\\src\\index.ts",
+      "function": "Object.require.extensions.<computed> [as .ts]",
+      "line": 1621,
+      "method": "ts]",
+      "native": false
+    },
+    {
+      "column": 32,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Module.load",
+      "line": 1091,
+      "method": "load",
+      "native": false
+    },
+    {
+      "column": 12,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Module._load",
+      "line": 938,
+      "method": "_load",
+      "native": false
+    },
+    {
+      "column": 19,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Module.require",
+      "line": 1115,
+      "method": "require",
+      "native": false
+    }
+  ]
+}
+2024-04-22 05:39:08 - c4576e2f-b690-492e-ada2-a0a90c02f125 - error: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/utills/response/constrant.ts[0m:[93m12[0m:[93m3[0m - [91merror[0m[90m TS1005: [0m',' expected.
+
+[7m12[0m   add: (labal: string) => {
+[7m  [0m [91m  ~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/utills/response/constrant.ts[0m:[93m12[0m:[93m3[0m - [91merror[0m[90m TS1005: [0m',' expected.
+
+[7m12[0m   add: (labal: string) => {
+[7m  [0m [91m  ~~~[0m
+
+    at createTSError (C:\Users\ditsd\AppData\Roaming\nvm\v20.9.0\node_modules\ts-node\src\index.ts:859:12)
+    at reportTSError (C:\Users\ditsd\AppData\Roaming\nvm\v20.9.0\node_modules\ts-node\src\index.ts:863:19)
+    at getOutput (C:\Users\ditsd\AppData\Roaming\nvm\v20.9.0\node_modules\ts-node\src\index.ts:1077:36)
+    at Object.compile (C:\Users\ditsd\AppData\Roaming\nvm\v20.9.0\node_modules\ts-node\src\index.ts:1433:41)
+    at Module.m._compile (C:\Users\ditsd\AppData\Roaming\nvm\v20.9.0\node_modules\ts-node\src\index.ts:1617:30)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1295:10)
+    at Object.require.extensions.<computed> [as .ts] (C:\Users\ditsd\AppData\Roaming\nvm\v20.9.0\node_modules\ts-node\src\index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1091:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:938:12)
+    at Module.require (node:internal/modules/cjs/loader:1115:19) {
+  "error": {
+    "diagnosticCodes": [
+      1005
+    ]
+  },
+  "stack": "TSError: ⨯ Unable to compile TypeScript:\n\u001b[96msrc/utills/response/constrant.ts\u001b[0m:\u001b[93m12\u001b[0m:\u001b[93m3\u001b[0m - \u001b[91merror\u001b[0m\u001b[90m TS1005: \u001b[0m',' expected.\r\n\r\n\u001b[7m12\u001b[0m   add: (labal: string) => {\r\n\u001b[7m  \u001b[0m \u001b[91m  ~~~\u001b[0m\r\n\n    at createTSError (C:\\Users\\ditsd\\AppData\\Roaming\\nvm\\v20.9.0\\node_modules\\ts-node\\src\\index.ts:859:12)\n    at reportTSError (C:\\Users\\ditsd\\AppData\\Roaming\\nvm\\v20.9.0\\node_modules\\ts-node\\src\\index.ts:863:19)\n    at getOutput (C:\\Users\\ditsd\\AppData\\Roaming\\nvm\\v20.9.0\\node_modules\\ts-node\\src\\index.ts:1077:36)\n    at Object.compile (C:\\Users\\ditsd\\AppData\\Roaming\\nvm\\v20.9.0\\node_modules\\ts-node\\src\\index.ts:1433:41)\n    at Module.m._compile (C:\\Users\\ditsd\\AppData\\Roaming\\nvm\\v20.9.0\\node_modules\\ts-node\\src\\index.ts:1617:30)\n    at Module._extensions..js (node:internal/modules/cjs/loader:1295:10)\n    at Object.require.extensions.<computed> [as .ts] (C:\\Users\\ditsd\\AppData\\Roaming\\nvm\\v20.9.0\\node_modules\\ts-node\\src\\index.ts:1621:12)\n    at Module.load (node:internal/modules/cjs/loader:1091:32)\n    at Function.Module._load (node:internal/modules/cjs/loader:938:12)\n    at Module.require (node:internal/modules/cjs/loader:1115:19)",
+  "exception": true,
+  "date": "Mon Apr 22 2024 11:09:08 GMT+0530 (India Standard Time)",
+  "process": {
+    "pid": 19280,
+    "uid": null,
+    "gid": null,
+    "cwd": "C:\\Users\\ditsd\\Desktop\\busTicketBooking\\customer",
+    "execPath": "C:\\Program Files\\nodejs\\node.exe",
+    "version": "v20.9.0",
+    "argv": [
+      "C:\\Program Files\\nodejs\\node_modules\\ts-node\\dist\\bin.js",
+      "C:\\Users\\ditsd\\Desktop\\busTicketBooking\\customer\\index.ts"
+    ],
+    "memoryUsage": {
+      "rss": 225959936,
+      "heapTotal": 179523584,
+      "heapUsed": 149713744,
+      "external": 6647371,
+      "arrayBuffers": 3630931
+    }
+  },
+  "os": {
+    "loadavg": [
+      0,
+      0,
+      0
+    ],
+    "uptime": 431504.937
+  },
+  "trace": [
+    {
+      "column": 12,
+      "file": "C:\\Users\\ditsd\\AppData\\Roaming\\nvm\\v20.9.0\\node_modules\\ts-node\\src\\index.ts",
+      "function": "createTSError",
+      "line": 859,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 19,
+      "file": "C:\\Users\\ditsd\\AppData\\Roaming\\nvm\\v20.9.0\\node_modules\\ts-node\\src\\index.ts",
+      "function": "reportTSError",
+      "line": 863,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 36,
+      "file": "C:\\Users\\ditsd\\AppData\\Roaming\\nvm\\v20.9.0\\node_modules\\ts-node\\src\\index.ts",
+      "function": "getOutput",
+      "line": 1077,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 41,
+      "file": "C:\\Users\\ditsd\\AppData\\Roaming\\nvm\\v20.9.0\\node_modules\\ts-node\\src\\index.ts",
+      "function": "Object.compile",
+      "line": 1433,
+      "method": "compile",
+      "native": false
+    },
+    {
+      "column": 30,
+      "file": "C:\\Users\\ditsd\\AppData\\Roaming\\nvm\\v20.9.0\\node_modules\\ts-node\\src\\index.ts",
+      "function": "Module.m._compile",
+      "line": 1617,
+      "method": "_compile",
+      "native": false
+    },
+    {
+      "column": 10,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Module._extensions..js",
+      "line": 1295,
+      "method": ".js",
+      "native": false
+    },
+    {
+      "column": 12,
+      "file": "C:\\Users\\ditsd\\AppData\\Roaming\\nvm\\v20.9.0\\node_modules\\ts-node\\src\\index.ts",
+      "function": "Object.require.extensions.<computed> [as .ts]",
+      "line": 1621,
+      "method": "ts]",
+      "native": false
+    },
+    {
+      "column": 32,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Module.load",
+      "line": 1091,
+      "method": "load",
+      "native": false
+    },
+    {
+      "column": 12,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Module._load",
+      "line": 938,
+      "method": "_load",
+      "native": false
+    },
+    {
+      "column": 19,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Module.require",
+      "line": 1115,
+      "method": "require",
+      "native": false
+    }
+  ]
+}
+2024-04-22 05:39:19 - 01d8d55d-e447-4fc7-96b9-6e8a0bfd0dfd - error: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/utills/response/constrant.ts[0m:[93m12[0m:[93m3[0m - [91merror[0m[90m TS1005: [0m',' expected.
+
+[7m12[0m   add: (labal: string) => {
+[7m  [0m [91m  ~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/utills/response/constrant.ts[0m:[93m12[0m:[93m3[0m - [91merror[0m[90m TS1005: [0m',' expected.
+
+[7m12[0m   add: (labal: string) => {
+[7m  [0m [91m  ~~~[0m
+
+    at createTSError (C:\Users\ditsd\AppData\Roaming\nvm\v20.9.0\node_modules\ts-node\src\index.ts:859:12)
+    at reportTSError (C:\Users\ditsd\AppData\Roaming\nvm\v20.9.0\node_modules\ts-node\src\index.ts:863:19)
+    at getOutput (C:\Users\ditsd\AppData\Roaming\nvm\v20.9.0\node_modules\ts-node\src\index.ts:1077:36)
+    at Object.compile (C:\Users\ditsd\AppData\Roaming\nvm\v20.9.0\node_modules\ts-node\src\index.ts:1433:41)
+    at Module.m._compile (C:\Users\ditsd\AppData\Roaming\nvm\v20.9.0\node_modules\ts-node\src\index.ts:1617:30)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1295:10)
+    at Object.require.extensions.<computed> [as .ts] (C:\Users\ditsd\AppData\Roaming\nvm\v20.9.0\node_modules\ts-node\src\index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1091:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:938:12)
+    at Module.require (node:internal/modules/cjs/loader:1115:19) {
+  "error": {
+    "diagnosticCodes": [
+      1005
+    ]
+  },
+  "stack": "TSError: ⨯ Unable to compile TypeScript:\n\u001b[96msrc/utills/response/constrant.ts\u001b[0m:\u001b[93m12\u001b[0m:\u001b[93m3\u001b[0m - \u001b[91merror\u001b[0m\u001b[90m TS1005: \u001b[0m',' expected.\r\n\r\n\u001b[7m12\u001b[0m   add: (labal: string) => {\r\n\u001b[7m  \u001b[0m \u001b[91m  ~~~\u001b[0m\r\n\n    at createTSError (C:\\Users\\ditsd\\AppData\\Roaming\\nvm\\v20.9.0\\node_modules\\ts-node\\src\\index.ts:859:12)\n    at reportTSError (C:\\Users\\ditsd\\AppData\\Roaming\\nvm\\v20.9.0\\node_modules\\ts-node\\src\\index.ts:863:19)\n    at getOutput (C:\\Users\\ditsd\\AppData\\Roaming\\nvm\\v20.9.0\\node_modules\\ts-node\\src\\index.ts:1077:36)\n    at Object.compile (C:\\Users\\ditsd\\AppData\\Roaming\\nvm\\v20.9.0\\node_modules\\ts-node\\src\\index.ts:1433:41)\n    at Module.m._compile (C:\\Users\\ditsd\\AppData\\Roaming\\nvm\\v20.9.0\\node_modules\\ts-node\\src\\index.ts:1617:30)\n    at Module._extensions..js (node:internal/modules/cjs/loader:1295:10)\n    at Object.require.extensions.<computed> [as .ts] (C:\\Users\\ditsd\\AppData\\Roaming\\nvm\\v20.9.0\\node_modules\\ts-node\\src\\index.ts:1621:12)\n    at Module.load (node:internal/modules/cjs/loader:1091:32)\n    at Function.Module._load (node:internal/modules/cjs/loader:938:12)\n    at Module.require (node:internal/modules/cjs/loader:1115:19)",
+  "exception": true,
+  "date": "Mon Apr 22 2024 11:09:19 GMT+0530 (India Standard Time)",
+  "process": {
+    "pid": 6768,
+    "uid": null,
+    "gid": null,
+    "cwd": "C:\\Users\\ditsd\\Desktop\\busTicketBooking\\customer",
+    "execPath": "C:\\Program Files\\nodejs\\node.exe",
+    "version": "v20.9.0",
+    "argv": [
+      "C:\\Program Files\\nodejs\\node_modules\\ts-node\\dist\\bin.js",
+      "C:\\Users\\ditsd\\Desktop\\busTicketBooking\\customer\\index.ts"
+    ],
+    "memoryUsage": {
+      "rss": 225619968,
+      "heapTotal": 179785728,
+      "heapUsed": 149337968,
+      "external": 6647291,
+      "arrayBuffers": 3630851
+    }
+  },
+  "os": {
+    "loadavg": [
+      0,
+      0,
+      0
+    ],
+    "uptime": 431516.89
+  },
+  "trace": [
+    {
+      "column": 12,
+      "file": "C:\\Users\\ditsd\\AppData\\Roaming\\nvm\\v20.9.0\\node_modules\\ts-node\\src\\index.ts",
+      "function": "createTSError",
+      "line": 859,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 19,
+      "file": "C:\\Users\\ditsd\\AppData\\Roaming\\nvm\\v20.9.0\\node_modules\\ts-node\\src\\index.ts",
+      "function": "reportTSError",
+      "line": 863,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 36,
+      "file": "C:\\Users\\ditsd\\AppData\\Roaming\\nvm\\v20.9.0\\node_modules\\ts-node\\src\\index.ts",
+      "function": "getOutput",
+      "line": 1077,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 41,
+      "file": "C:\\Users\\ditsd\\AppData\\Roaming\\nvm\\v20.9.0\\node_modules\\ts-node\\src\\index.ts",
+      "function": "Object.compile",
+      "line": 1433,
+      "method": "compile",
+      "native": false
+    },
+    {
+      "column": 30,
+      "file": "C:\\Users\\ditsd\\AppData\\Roaming\\nvm\\v20.9.0\\node_modules\\ts-node\\src\\index.ts",
+      "function": "Module.m._compile",
+      "line": 1617,
+      "method": "_compile",
+      "native": false
+    },
+    {
+      "column": 10,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Module._extensions..js",
+      "line": 1295,
+      "method": ".js",
+      "native": false
+    },
+    {
+      "column": 12,
+      "file": "C:\\Users\\ditsd\\AppData\\Roaming\\nvm\\v20.9.0\\node_modules\\ts-node\\src\\index.ts",
+      "function": "Object.require.extensions.<computed> [as .ts]",
+      "line": 1621,
+      "method": "ts]",
+      "native": false
+    },
+    {
+      "column": 32,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Module.load",
+      "line": 1091,
+      "method": "load",
+      "native": false
+    },
+    {
+      "column": 12,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Module._load",
+      "line": 938,
+      "method": "_load",
+      "native": false
+    },
+    {
+      "column": 19,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Module.require",
+      "line": 1115,
+      "method": "require",
+      "native": false
+    }
+  ]
+}
+2024-04-22 05:39:24 - 88e8bb20-e3b1-4728-8e03-8763b996a345 - error: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/utills/response/constrant.ts[0m:[93m12[0m:[93m3[0m - [91merror[0m[90m TS1005: [0m',' expected.
+
+[7m12[0m   add: (labal: string) => {
+[7m  [0m [91m  ~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/utills/response/constrant.ts[0m:[93m12[0m:[93m3[0m - [91merror[0m[90m TS1005: [0m',' expected.
+
+[7m12[0m   add: (labal: string) => {
+[7m  [0m [91m  ~~~[0m
+
+    at createTSError (C:\Users\ditsd\AppData\Roaming\nvm\v20.9.0\node_modules\ts-node\src\index.ts:859:12)
+    at reportTSError (C:\Users\ditsd\AppData\Roaming\nvm\v20.9.0\node_modules\ts-node\src\index.ts:863:19)
+    at getOutput (C:\Users\ditsd\AppData\Roaming\nvm\v20.9.0\node_modules\ts-node\src\index.ts:1077:36)
+    at Object.compile (C:\Users\ditsd\AppData\Roaming\nvm\v20.9.0\node_modules\ts-node\src\index.ts:1433:41)
+    at Module.m._compile (C:\Users\ditsd\AppData\Roaming\nvm\v20.9.0\node_modules\ts-node\src\index.ts:1617:30)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1295:10)
+    at Object.require.extensions.<computed> [as .ts] (C:\Users\ditsd\AppData\Roaming\nvm\v20.9.0\node_modules\ts-node\src\index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1091:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:938:12)
+    at Module.require (node:internal/modules/cjs/loader:1115:19) {
+  "error": {
+    "diagnosticCodes": [
+      1005
+    ]
+  },
+  "stack": "TSError: ⨯ Unable to compile TypeScript:\n\u001b[96msrc/utills/response/constrant.ts\u001b[0m:\u001b[93m12\u001b[0m:\u001b[93m3\u001b[0m - \u001b[91merror\u001b[0m\u001b[90m TS1005: \u001b[0m',' expected.\r\n\r\n\u001b[7m12\u001b[0m   add: (labal: string) => {\r\n\u001b[7m  \u001b[0m \u001b[91m  ~~~\u001b[0m\r\n\n    at createTSError (C:\\Users\\ditsd\\AppData\\Roaming\\nvm\\v20.9.0\\node_modules\\ts-node\\src\\index.ts:859:12)\n    at reportTSError (C:\\Users\\ditsd\\AppData\\Roaming\\nvm\\v20.9.0\\node_modules\\ts-node\\src\\index.ts:863:19)\n    at getOutput (C:\\Users\\ditsd\\AppData\\Roaming\\nvm\\v20.9.0\\node_modules\\ts-node\\src\\index.ts:1077:36)\n    at Object.compile (C:\\Users\\ditsd\\AppData\\Roaming\\nvm\\v20.9.0\\node_modules\\ts-node\\src\\index.ts:1433:41)\n    at Module.m._compile (C:\\Users\\ditsd\\AppData\\Roaming\\nvm\\v20.9.0\\node_modules\\ts-node\\src\\index.ts:1617:30)\n    at Module._extensions..js (node:internal/modules/cjs/loader:1295:10)\n    at Object.require.extensions.<computed> [as .ts] (C:\\Users\\ditsd\\AppData\\Roaming\\nvm\\v20.9.0\\node_modules\\ts-node\\src\\index.ts:1621:12)\n    at Module.load (node:internal/modules/cjs/loader:1091:32)\n    at Function.Module._load (node:internal/modules/cjs/loader:938:12)\n    at Module.require (node:internal/modules/cjs/loader:1115:19)",
+  "exception": true,
+  "date": "Mon Apr 22 2024 11:09:24 GMT+0530 (India Standard Time)",
+  "process": {
+    "pid": 19496,
+    "uid": null,
+    "gid": null,
+    "cwd": "C:\\Users\\ditsd\\Desktop\\busTicketBooking\\customer",
+    "execPath": "C:\\Program Files\\nodejs\\node.exe",
+    "version": "v20.9.0",
+    "argv": [
+      "C:\\Program Files\\nodejs\\node_modules\\ts-node\\dist\\bin.js",
+      "C:\\Users\\ditsd\\Desktop\\busTicketBooking\\customer\\index.ts"
+    ],
+    "memoryUsage": {
+      "rss": 225701888,
+      "heapTotal": 178737152,
+      "heapUsed": 150413032,
+      "external": 6647211,
+      "arrayBuffers": 3630771
+    }
+  },
+  "os": {
+    "loadavg": [
+      0,
+      0,
+      0
+    ],
+    "uptime": 431521.796
+  },
+  "trace": [
+    {
+      "column": 12,
+      "file": "C:\\Users\\ditsd\\AppData\\Roaming\\nvm\\v20.9.0\\node_modules\\ts-node\\src\\index.ts",
+      "function": "createTSError",
+      "line": 859,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 19,
+      "file": "C:\\Users\\ditsd\\AppData\\Roaming\\nvm\\v20.9.0\\node_modules\\ts-node\\src\\index.ts",
+      "function": "reportTSError",
+      "line": 863,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 36,
+      "file": "C:\\Users\\ditsd\\AppData\\Roaming\\nvm\\v20.9.0\\node_modules\\ts-node\\src\\index.ts",
+      "function": "getOutput",
+      "line": 1077,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 41,
+      "file": "C:\\Users\\ditsd\\AppData\\Roaming\\nvm\\v20.9.0\\node_modules\\ts-node\\src\\index.ts",
+      "function": "Object.compile",
+      "line": 1433,
+      "method": "compile",
+      "native": false
+    },
+    {
+      "column": 30,
+      "file": "C:\\Users\\ditsd\\AppData\\Roaming\\nvm\\v20.9.0\\node_modules\\ts-node\\src\\index.ts",
+      "function": "Module.m._compile",
+      "line": 1617,
+      "method": "_compile",
+      "native": false
+    },
+    {
+      "column": 10,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Module._extensions..js",
+      "line": 1295,
+      "method": ".js",
+      "native": false
+    },
+    {
+      "column": 12,
+      "file": "C:\\Users\\ditsd\\AppData\\Roaming\\nvm\\v20.9.0\\node_modules\\ts-node\\src\\index.ts",
+      "function": "Object.require.extensions.<computed> [as .ts]",
+      "line": 1621,
+      "method": "ts]",
+      "native": false
+    },
+    {
+      "column": 32,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Module.load",
+      "line": 1091,
+      "method": "load",
+      "native": false
+    },
+    {
+      "column": 12,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Module._load",
+      "line": 938,
+      "method": "_load",
+      "native": false
+    },
+    {
+      "column": 19,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Module.require",
+      "line": 1115,
+      "method": "require",
+      "native": false
+    }
+  ]
+}
+2024-04-22 05:48:14 - 8a427a68-a454-419b-9887-3f0442ac6036 - error: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/utills/response/constrant.ts[0m:[93m15[0m:[93m3[0m - [91merror[0m[90m TS1117: [0mAn object literal cannot have multiple properties with the same name.
+
+[7m15[0m   add: (labal: string) => {
+[7m  [0m [91m  ~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/utills/response/constrant.ts[0m:[93m15[0m:[93m3[0m - [91merror[0m[90m TS1117: [0mAn object literal cannot have multiple properties with the same name.
+
+[7m15[0m   add: (labal: string) => {
+[7m  [0m [91m  ~~~[0m
+
+    at createTSError (C:\Users\ditsd\AppData\Roaming\nvm\v20.9.0\node_modules\ts-node\src\index.ts:859:12)
+    at reportTSError (C:\Users\ditsd\AppData\Roaming\nvm\v20.9.0\node_modules\ts-node\src\index.ts:863:19)
+    at getOutput (C:\Users\ditsd\AppData\Roaming\nvm\v20.9.0\node_modules\ts-node\src\index.ts:1077:36)
+    at Object.compile (C:\Users\ditsd\AppData\Roaming\nvm\v20.9.0\node_modules\ts-node\src\index.ts:1433:41)
+    at Module.m._compile (C:\Users\ditsd\AppData\Roaming\nvm\v20.9.0\node_modules\ts-node\src\index.ts:1617:30)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1295:10)
+    at Object.require.extensions.<computed> [as .ts] (C:\Users\ditsd\AppData\Roaming\nvm\v20.9.0\node_modules\ts-node\src\index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1091:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:938:12)
+    at Module.require (node:internal/modules/cjs/loader:1115:19) {
+  "error": {
+    "diagnosticCodes": [
+      1117
+    ]
+  },
+  "stack": "TSError: ⨯ Unable to compile TypeScript:\n\u001b[96msrc/utills/response/constrant.ts\u001b[0m:\u001b[93m15\u001b[0m:\u001b[93m3\u001b[0m - \u001b[91merror\u001b[0m\u001b[90m TS1117: \u001b[0mAn object literal cannot have multiple properties with the same name.\r\n\r\n\u001b[7m15\u001b[0m   add: (labal: string) => {\r\n\u001b[7m  \u001b[0m \u001b[91m  ~~~\u001b[0m\r\n\n    at createTSError (C:\\Users\\ditsd\\AppData\\Roaming\\nvm\\v20.9.0\\node_modules\\ts-node\\src\\index.ts:859:12)\n    at reportTSError (C:\\Users\\ditsd\\AppData\\Roaming\\nvm\\v20.9.0\\node_modules\\ts-node\\src\\index.ts:863:19)\n    at getOutput (C:\\Users\\ditsd\\AppData\\Roaming\\nvm\\v20.9.0\\node_modules\\ts-node\\src\\index.ts:1077:36)\n    at Object.compile (C:\\Users\\ditsd\\AppData\\Roaming\\nvm\\v20.9.0\\node_modules\\ts-node\\src\\index.ts:1433:41)\n    at Module.m._compile (C:\\Users\\ditsd\\AppData\\Roaming\\nvm\\v20.9.0\\node_modules\\ts-node\\src\\index.ts:1617:30)\n    at Module._extensions..js (node:internal/modules/cjs/loader:1295:10)\n    at Object.require.extensions.<computed> [as .ts] (C:\\Users\\ditsd\\AppData\\Roaming\\nvm\\v20.9.0\\node_modules\\ts-node\\src\\index.ts:1621:12)\n    at Module.load (node:internal/modules/cjs/loader:1091:32)\n    at Function.Module._load (node:internal/modules/cjs/loader:938:12)\n    at Module.require (node:internal/modules/cjs/loader:1115:19)",
+  "exception": true,
+  "date": "Mon Apr 22 2024 11:18:14 GMT+0530 (India Standard Time)",
+  "process": {
+    "pid": 19448,
+    "uid": null,
+    "gid": null,
+    "cwd": "C:\\Users\\ditsd\\Desktop\\busTicketBooking\\customer",
+    "execPath": "C:\\Program Files\\nodejs\\node.exe",
+    "version": "v20.9.0",
+    "argv": [
+      "C:\\Program Files\\nodejs\\node_modules\\ts-node\\dist\\bin.js",
+      "C:\\Users\\ditsd\\Desktop\\busTicketBooking\\customer\\index.ts"
+    ],
+    "memoryUsage": {
+      "rss": 224890880,
+      "heapTotal": 178475008,
+      "heapUsed": 150476320,
+      "external": 6647331,
+      "arrayBuffers": 3630891
+    }
+  },
+  "os": {
+    "loadavg": [
+      0,
+      0,
+      0
+    ],
+    "uptime": 432051.203
+  },
+  "trace": [
+    {
+      "column": 12,
+      "file": "C:\\Users\\ditsd\\AppData\\Roaming\\nvm\\v20.9.0\\node_modules\\ts-node\\src\\index.ts",
+      "function": "createTSError",
+      "line": 859,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 19,
+      "file": "C:\\Users\\ditsd\\AppData\\Roaming\\nvm\\v20.9.0\\node_modules\\ts-node\\src\\index.ts",
+      "function": "reportTSError",
+      "line": 863,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 36,
+      "file": "C:\\Users\\ditsd\\AppData\\Roaming\\nvm\\v20.9.0\\node_modules\\ts-node\\src\\index.ts",
+      "function": "getOutput",
+      "line": 1077,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 41,
+      "file": "C:\\Users\\ditsd\\AppData\\Roaming\\nvm\\v20.9.0\\node_modules\\ts-node\\src\\index.ts",
+      "function": "Object.compile",
+      "line": 1433,
+      "method": "compile",
+      "native": false
+    },
+    {
+      "column": 30,
+      "file": "C:\\Users\\ditsd\\AppData\\Roaming\\nvm\\v20.9.0\\node_modules\\ts-node\\src\\index.ts",
+      "function": "Module.m._compile",
+      "line": 1617,
+      "method": "_compile",
+      "native": false
+    },
+    {
+      "column": 10,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Module._extensions..js",
+      "line": 1295,
+      "method": ".js",
+      "native": false
+    },
+    {
+      "column": 12,
+      "file": "C:\\Users\\ditsd\\AppData\\Roaming\\nvm\\v20.9.0\\node_modules\\ts-node\\src\\index.ts",
+      "function": "Object.require.extensions.<computed> [as .ts]",
+      "line": 1621,
+      "method": "ts]",
+      "native": false
+    },
+    {
+      "column": 32,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Module.load",
+      "line": 1091,
+      "method": "load",
+      "native": false
+    },
+    {
+      "column": 12,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Module._load",
+      "line": 938,
+      "method": "_load",
+      "native": false
+    },
+    {
+      "column": 19,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Module.require",
+      "line": 1115,
+      "method": "require",
+      "native": false
+    }
+  ]
+}
