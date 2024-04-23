@@ -73,7 +73,7 @@ async function updateEmployee(req: Request, res: Response) {
     const data = req.body
     const EmployeeId: string = req.params.id
 
-    const customerData = await userService.changePasswordService(
+    const customerData = await userService.updateEmployeeService(
       data,
       EmployeeId,
     )

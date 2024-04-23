@@ -1,26 +1,8 @@
-import { DataTypes, Model } from 'sequelize'
+import { DataTypes } from 'sequelize'
 import sequelize from '../config/dbConfig'
-import { IEmployeesAttributes } from '../utills/interface/interface'
 import { Role } from '../utills/enums/enum'
+import {employees} from '../utills/interface/interface'
 
-class employees extends Model<IEmployeesAttributes> implements IEmployeesAttributes {
-  public id!: string
-  public email!: string
-  public password!: string
-  public firstName!: string
-  public lastName?: string
-  public address?: string
-  public Dob?: Date
-  public phoneNo!: number
-  public createdAt?: Date
-  public updatedAt?: Date
-  public deletedAt?: Date
-  public deletedBy?: string
-  public isDeleted?: boolean
-  public role?: Role
-  public otp?: number
-  public otpExpiration?: Date
-}
 
 employees.init(
   {

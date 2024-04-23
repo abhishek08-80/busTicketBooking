@@ -1,4 +1,5 @@
 import { Role } from '../enums/enum'
+import {  Model } from 'sequelize'
 
 export interface IEmployeesAttributes {
   id?: string
@@ -25,43 +26,24 @@ export interface IEmployeeUpdatePassword extends IEmployeesAttributes {
   confirmPassword: string
 }
 
-// export interface ICustomerRequest extends ICustomerAttributes {
-//   body: ICustomerAttributes
-// }
-
-
-// export interface ICustomerUpdateAttributes {
-//   id?: string
-//   firstName?: string
-//   lastName?: string
-//   address?: string
-//   Dob?: Date
-//   phoneNo?: number
-//   email?: string
-//   password?: string
-//   createdAt?: Date
-//   updatedAt?: Date
-//   deletedAt?: Date
-//   deletedBy?: string
-//   isDeleted?: boolean
-// }
-
-// export interface ILoginCustomer {
-//   email: string
-//   password: string
-// }
-
-// export interface IDeleteCustomer {
-//   id: string
-// }
-
-
-// export interface Decode {
-//   _id: string
-//   email: string
-//   role: string
-// }
-
+export class employees extends Model<IEmployeesAttributes> implements IEmployeesAttributes {
+  public id!: string
+  public email!: string
+  public password!: string
+  public firstName!: string
+  public lastName?: string
+  public address?: string
+  public Dob?: Date
+  public phoneNo!: number
+  public createdAt?: Date
+  public updatedAt?: Date
+  public deletedAt?: Date
+  public deletedBy?: string
+  public isDeleted?: boolean
+  public role?: Role
+  public otp?: number
+  public otpExpiration?: Date
+}
 
 export interface ITokenDetail {
   id: string,
