@@ -1,26 +1,8 @@
-import { DataTypes, Model } from 'sequelize'
+import { DataTypes } from 'sequelize'
 import sequelize from '../config/dbConfig'
-import { ICustomerAttributes } from '../utills/interface/interface'
 import { Role } from '../utills/enums/enum'
+import {customer} from '../utills/interface/interface'
 
-class customer extends Model<ICustomerAttributes> implements ICustomerAttributes {
-  public id!: string
-  public email!: string
-  public password!: string
-  public firstName!: string
-  public lastName?: string
-  public address?: string
-  public Dob?: Date
-  public phoneNo!: number
-  public createdAt?: Date
-  public updatedAt?: Date
-  public deletedAt?: Date
-  public deletedBy?: string
-  public isDeleted?: boolean
-  public role?: Role
-  public otp?: number
-  public otpExpiration?: Date
-}
 
 customer.init(
   {
