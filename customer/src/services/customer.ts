@@ -193,12 +193,12 @@ async function loginCustomerService(data: ICustomerAttributes) {
       },
     })
     if (!user) {
-      return 'userDoesNotExist'
+      return 'userDoesNotExist' 
     } else {
       const pass = await comparePassword(password, user.password)
       if (pass !== true) {
         return 'incorrectPassword'
-      }
+      } 
       else {
         const tokenReq: ITokenDetail = {
           id: user.id,
@@ -234,12 +234,11 @@ async function changePasswordService(data: ICustomerUpdatePassword, customerId: 
     console.log(existingUser)
     const isMatch = await comparePassword(oldPassword, existingUser.password);
     if (!isMatch) {
-
       return 'oldPasswordIncorrect'
     }
     const pass = await hashPassword(newPassword)
     existingUser.password = pass
-    await existingUser.save();
+    await existingUser.update({password:pass});
 
     return existingUser
   }
@@ -252,7 +251,7 @@ async function changePasswordService(data: ICustomerUpdatePassword, customerId: 
 async function resetPasswordService(data: ICustomerUpdatePassword) {
 
   try {
-    const { email, otp, newPassword, confirmPassword } = data;
+    const { email, otp, newPassword, confirmPassword } = data; 
 
     if (newPassword !== confirmPassword) {
       return 'newPassword!== confirmPassword'
@@ -270,15 +269,18 @@ async function resetPasswordService(data: ICustomerUpdatePassword) {
       return 'incorrectOtp'
     }
     const otpExpiration = existingUser.otpExpiration
-    if (otpExpiration < Date.now()) {
-      console.log(otpExpiration, Date.now())
+    if (otpExpiration < new Date(Date.now())) {
+      console.log(otpExpiration, new Date(Date.now()))
       return 'otpExpired'
     }
-    const pass = await this.hashPassword(newPassword)
-    existingUser.password = pass
-    existingUser.otp = undefined
-    existingUser.password = newPassword;
-    await existingUser.save();
+    //const password: string = await hashPassword(data.password)
+    // data.newPassword = password
+    const pass = await hashPassword(newPassword)
+    // existingUser.password = pass
+    // existingUser.otp = undefined
+    // existingUser.otpExpiration = undefined
+    await existingUser.update({ otp: otp, password: pass, otpExpiration: otpExpiration});
+    console.log('ok', existingUser, 'ok')
 
     const mailDetails = {
       // from: '',
@@ -318,8 +320,8 @@ async function resetPasswordEmailService(data: ICustomerAttributes) {
     }
     const otp = Math.floor(Math.random() * 999999)
     console.log(otp)
-    const otpExpiration = Date.now() + 600000;
-    console.log(otpExpiration, Date.now() + 600000)
+    const otpExpiration = new Date(Date.now() + 600000);
+    console.log(otpExpiration)
     const mailDetails = {
       // from: '', 
       to: existingUser?.email,
@@ -338,8 +340,16 @@ async function resetPasswordEmailService(data: ICustomerAttributes) {
     existingUser.otp = otp
     existingUser.otpExpiration = otpExpiration
     console.log("here", existingUser, "here")
-    await existingUser.save();
+    // await existingUser.update({
+    //   // otp:otp,
+    //   otpExpiration:otpExpiration
+    // });
 
+    // return await userModel.customer.update(
+    //   { otp: otp , otpExpiration:otpExpiration },
+    //   { where: { email: data.email } }
+    // )
+    existingUser.save()
     return existingUser;
   } catch (err) {
     logger.error(err)

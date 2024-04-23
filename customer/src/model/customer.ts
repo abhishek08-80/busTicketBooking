@@ -19,7 +19,7 @@ class customer extends Model<ICustomerAttributes> implements ICustomerAttributes
   public isDeleted?: boolean
   public role?: Role
   public otp?: number
-  public otpExpiration?: number
+  public otpExpiration?: Date
 }
 
 customer.init(
@@ -83,7 +83,7 @@ customer.init(
       allowNull: true
     },
     otpExpiration: {
-      type: DataTypes.NUMBER,
+      type: DataTypes.DATE,
       allowNull: true
     }
   },

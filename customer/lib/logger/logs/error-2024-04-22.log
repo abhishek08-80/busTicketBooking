@@ -997,3 +997,60 @@ TSError: ⨯ Unable to compile TypeScript:
     }
   ]
 }
+2024-04-22 08:43:31 - 0ceca006-13f8-4a33-8f29-1fd4fc88b0fa - error: Table 'busticketbooking.customers' doesn't exist {
+  "name": "SequelizeDatabaseError",
+  "parent": {
+    "code": "ER_NO_SUCH_TABLE",
+    "errno": 1146,
+    "sqlState": "42S02",
+    "sqlMessage": "Table 'busticketbooking.customers' doesn't exist",
+    "sql": "SELECT `id`, `firstName`, `lastName`, `email`, `password`, `Dob`, `phoneNo`, `createdAt`, `updatedAt`, `deletedAt`, `deletedBy`, `isDeleted`, `role`, `otp`, `otpExpiration` FROM `customers` AS `customer` WHERE `customer`.`email` = 'jaspreet@gmail.com' AND `customer`.`isDeleted` = false LIMIT 1;"
+  },
+  "original": {
+    "code": "ER_NO_SUCH_TABLE",
+    "errno": 1146,
+    "sqlState": "42S02",
+    "sqlMessage": "Table 'busticketbooking.customers' doesn't exist",
+    "sql": "SELECT `id`, `firstName`, `lastName`, `email`, `password`, `Dob`, `phoneNo`, `createdAt`, `updatedAt`, `deletedAt`, `deletedBy`, `isDeleted`, `role`, `otp`, `otpExpiration` FROM `customers` AS `customer` WHERE `customer`.`email` = 'jaspreet@gmail.com' AND `customer`.`isDeleted` = false LIMIT 1;"
+  },
+  "sql": "SELECT `id`, `firstName`, `lastName`, `email`, `password`, `Dob`, `phoneNo`, `createdAt`, `updatedAt`, `deletedAt`, `deletedBy`, `isDeleted`, `role`, `otp`, `otpExpiration` FROM `customers` AS `customer` WHERE `customer`.`email` = 'jaspreet@gmail.com' AND `customer`.`isDeleted` = false LIMIT 1;",
+  "parameters": {}
+}
+2024-04-22 08:43:31 - d3208d47-7357-4a6e-baf3-eee7086916ad - error: userAdd userController Error @ Error: 	Table 'busticketbooking.customers' doesn't exist 
+2024-04-22 08:43:50 - 28a74cdf-f64e-4c60-908b-435652dccf51 - error: Table 'busticketbooking.customers' doesn't exist {
+  "name": "SequelizeDatabaseError",
+  "parent": {
+    "code": "ER_NO_SUCH_TABLE",
+    "errno": 1146,
+    "sqlState": "42S02",
+    "sqlMessage": "Table 'busticketbooking.customers' doesn't exist",
+    "sql": "SELECT `id`, `firstName`, `lastName`, `email`, `password`, `Dob`, `phoneNo`, `createdAt`, `updatedAt`, `deletedAt`, `deletedBy`, `isDeleted`, `role`, `otp`, `otpExpiration` FROM `customers` AS `customer` WHERE `customer`.`email` = 'jaspreet@gmail.com' LIMIT 1;"
+  },
+  "original": {
+    "code": "ER_NO_SUCH_TABLE",
+    "errno": 1146,
+    "sqlState": "42S02",
+    "sqlMessage": "Table 'busticketbooking.customers' doesn't exist",
+    "sql": "SELECT `id`, `firstName`, `lastName`, `email`, `password`, `Dob`, `phoneNo`, `createdAt`, `updatedAt`, `deletedAt`, `deletedBy`, `isDeleted`, `role`, `otp`, `otpExpiration` FROM `customers` AS `customer` WHERE `customer`.`email` = 'jaspreet@gmail.com' LIMIT 1;"
+  },
+  "sql": "SELECT `id`, `firstName`, `lastName`, `email`, `password`, `Dob`, `phoneNo`, `createdAt`, `updatedAt`, `deletedAt`, `deletedBy`, `isDeleted`, `role`, `otp`, `otpExpiration` FROM `customers` AS `customer` WHERE `customer`.`email` = 'jaspreet@gmail.com' LIMIT 1;",
+  "parameters": {}
+}
+2024-04-22 08:43:52 - 11d800a0-b21a-4f4b-b13b-704721a67ce4 - error: userUpdate userController Error @ Error: 	Table 'busticketbooking.customers' doesn't exist 
+2024-04-22 09:38:04 - cf555859-56dd-493a-9fcb-a77b1e880e49 - error: data and hash arguments required 
+2024-04-22 09:38:04 - 6b5ff394-344a-4be8-8e88-fef447ab8acf - error: userAdd userController Error @ Error: 	data and hash arguments required 
+2024-04-22 09:38:14 - 34301038-197d-4313-a052-01028387712c - error: data and hash arguments required 
+2024-04-22 09:38:14 - c83f643d-4ce5-40ad-be8f-d7975d140f4d - error: userAdd userController Error @ Error: 	data and hash arguments required 
+2024-04-22 09:40:01 - f471439e-e0c8-4782-9d71-afe0676eb92a - error: data and hash arguments required 
+2024-04-22 09:40:40 - ac99e922-2dd0-4f21-9fb6-b39fef4bfc1c - error: userAdd userController Error @ Error: 	data and hash arguments required 
+2024-04-22 10:19:33 - 33143df2-728c-4efc-90c7-c7b7e1e00397 - error: data and hash arguments required 
+2024-04-22 10:19:33 - b1f949dc-de35-4ef5-9564-872b08dc2a32 - error: userAdd userController Error @ Error: 	data and hash arguments required 
+2024-04-22 10:20:18 - 892e3332-0c5f-490b-a448-0fc870eb66b3 - error: data and hash arguments required 
+2024-04-22 10:21:00 - ee6544da-6ccc-4745-868e-a72c31ca5259 - error: userAdd userController Error @ Error: 	data and hash arguments required 
+2024-04-22 10:36:33 - 6427331e-7a29-4352-bd1c-d1d1d8324d5e - error: data and hash arguments required 
+2024-04-22 10:36:33 - 169a2f87-dafa-4d21-a0ea-122866e096f0 - error: userUpdate userController Error @ Error: 	data and hash arguments required 
+2024-04-22 10:38:36 - 9944e91c-9c04-4188-be94-2428b4878d78 - error: data and hash arguments required 
+2024-04-22 10:38:44 - 41f649b1-4765-4a59-abb1-d4c7b3292d22 - error: userUpdate userController Error @ Error: 	data and hash arguments required 
+2024-04-22 10:40:46 - 38c00818-74dd-4903-8d0d-9ed4b00c1693 - error: data and hash arguments required 
+2024-04-22 10:40:46 - 6b46ca7d-c3d9-47ba-a23e-3a4ce52806cc - error: userUpdate userController Error @ Error: 	data and hash arguments required 
+2024-04-22 10:44:09 - ef4ffaca-b93b-4882-82b5-1dccf9d8ffa9 - error: data and hash arguments required 

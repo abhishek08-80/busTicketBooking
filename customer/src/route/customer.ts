@@ -1,7 +1,7 @@
 import userController from '../controller/customer'
 import validationMiddleware from '../utills/validations/validation'
 
-const restaurantRoute = (app) => {
+const customerRoute = (app) => {
   app.post(
     '/createCustomer',
     validationMiddleware,
@@ -37,4 +37,4 @@ const restaurantRoute = (app) => {
     '/resetPassword', validationMiddleware,
     userController.resetPassword)
 }
-export default restaurantRoute
+export default customerRoute

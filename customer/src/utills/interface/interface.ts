@@ -16,7 +16,7 @@ export interface ICustomerAttributes {
   isDeleted?: boolean
   role?: Role
   otp?: number
-  otpExpiration?: number
+  otpExpiration?: Date
 }
 
 export interface ICustomerUpdatePassword extends ICustomerAttributes {
