@@ -18,6 +18,7 @@ const commonFun = new CommonFunction(jwt);
 
 export default class employee {
 
+  // function for adding new employee
   async createEmployeeService(data: IEmployeesAttributes) {
     try {
       const email: string = data.email;
@@ -52,6 +53,8 @@ export default class employee {
       throw new Error(err.message);
     }
   }
+
+  // function for updating employee service except for password
   async updateEmployeeService(data: IEmployeesAttributes, CustomerId: string) {
     try {
       const newEmail: string = data.email;
@@ -92,7 +95,7 @@ export default class employee {
 
 
 
-
+  // delete employee service
   async deleteEmployeeService(data) {
     try {
       const user = await userModel.employees.findByPk(data.id);
@@ -112,6 +115,7 @@ export default class employee {
     }
   }
 
+  // function for getting all the employees
   async getAllService() {
     try {
       const user = await userModel.employees.findAll({
@@ -161,7 +165,7 @@ export default class employee {
     }
   }
 
-
+  // function for changing password
   async changePasswordService(data: IEmployeeUpdatePassword, customerId: string) {
 
     try {
@@ -192,6 +196,7 @@ export default class employee {
     }
   }
 
+  // function for reset password
   async resetPasswordService(data: IEmployeeUpdatePassword) {
 
     try {
@@ -244,6 +249,7 @@ export default class employee {
     }
   }
 
+  // function for sending otp through mail for employee
   async resetPasswordEmailService(data: IEmployeesAttributes) {
 
     try {
@@ -282,16 +288,3 @@ export default class employee {
     }
   }
 }
-
-
-
-// export default {
-//   createEmployeeService,
-//   updateEmployeeService,
-//   deleteEmployeeService,
-//   getAllService,
-//   loginEmployeeService,
-//   changePasswordService,
-//   resetPasswordService,
-//   resetPasswordEmailService
-// };

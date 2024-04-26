@@ -8,6 +8,7 @@ import employee from '../services/employee';
 
 export default class employeeController {
 
+  // function for adding new employee
   async createEmployee(req: Request, res: Response) {
     try {
       const data = await new employee().createEmployeeService(req.body);
@@ -40,6 +41,7 @@ export default class employeeController {
     }
   }
 
+  // funtion for deleteing employee 
   async deleteEmployee(req: Request, res: Response) {
     try {
       const data = await new employee().deleteEmployeeService(req.params);
@@ -72,6 +74,7 @@ export default class employeeController {
     }
   }
 
+  // function fir updating employee details except for password
   async updateEmployee(req: Request, res: Response) {
     try {
       const data = req.body;
@@ -124,6 +127,7 @@ export default class employeeController {
     }
   }
 
+  // function for updating password for employee
   async changePassword(req: Request, res: Response) {
     try {
       const data = req.body;
@@ -172,6 +176,7 @@ export default class employeeController {
     }
   }
 
+  // function for resetting password for employee through otp 
   async resetPassword(req: Request, res: Response) {
     try {
       const data = req.body;
@@ -220,6 +225,7 @@ export default class employeeController {
     }
   }
 
+  // function for sending otp through email for employee
   async resetPasswordEmail(req: Request, res: Response) {
     try {
       const data = req.body;
@@ -248,6 +254,7 @@ export default class employeeController {
     }
   }
 
+  // function for getting all employee
   async getEmployee(req: Request, res: Response) {
     try {
       const data = await new employee().getAllService();
@@ -276,6 +283,7 @@ export default class employeeController {
     }
   }
 
+  // function for employee to login and generate token
   async loginEmployee(req: Request, res: Response) {
     try {
       const data = await new employee().loginEmployeeService(req.body);

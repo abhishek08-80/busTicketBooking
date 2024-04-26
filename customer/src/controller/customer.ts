@@ -1,5 +1,4 @@
 import { Request, Response } from 'express';
-// import userService from '../services/customer';
 import { successResponse, failResponse } from '../utills/response/response';
 import { statusCode, message } from '../utills/response/constrant';
 import logger from '../utills/logger/logger';
@@ -13,9 +12,11 @@ export default class customerController {
   static deleteCustomer;
   static getCustomer;
 
+  //add new user function
   async createCustomer(req: Request, res: Response) {
     try {
       const data = await new customer().createCustomerService(req.body);
+      //if the customer with the same email exists
       if (data == 'userAlreadyExist') {
         res
           .status(statusCode.badRequest)
@@ -44,7 +45,7 @@ export default class customerController {
         );
     }
   }
-
+  // delete customer function
   async deleteCustomer(req: Request, res: Response) {
     try {
       const data = await new customer().deleteCustomerService(req.params);
@@ -77,6 +78,7 @@ export default class customerController {
     }
   }
 
+  // customer can update all the fields except password
   async updateCustomer(req: Request, res: Response) {
     try {
       const data = req.body;
@@ -127,7 +129,7 @@ export default class customerController {
     }
   }
 
-
+  // function for changing password 
   async changePassword(req: Request, res: Response) {
     try {
       const data = req.body;
@@ -185,6 +187,7 @@ export default class customerController {
     }
   }
 
+  // function for setting customer password
   async resetPassword(req: Request, res: Response) {
     try {
       const data = req.body;
@@ -255,7 +258,7 @@ export default class customerController {
 
 
 
-
+  // function for sending otp for reset password 
   async resetPasswordEmail(req: Request, res: Response) {
     try {
       const data = req.body;
@@ -294,7 +297,7 @@ export default class customerController {
 
 
 
-
+  // get all customers function
   async getCustomer(req: Request, res: Response) {
     try {
       const data = await new customer().getCustomerService();
@@ -327,6 +330,7 @@ export default class customerController {
     }
   }
 
+  // function for customer to login
   async loginCustomer(req: Request, res: Response) {
     try {
       const data = await new customer().loginCustomerService(req.body);
