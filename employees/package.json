@@ -6,13 +6,17 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon index.ts",
+    "dev": "nodemon index.js",
     "prettier": "prettier --write .",
-    "prettier:check": "prettier --check ."
+    "prettier:check": "prettier --check .",
+    "build": "tsc"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@grpc/grpc-js": "^1.10.6",
+    "@grpc/proto-loader": "^0.7.12",
     "@types/bcrypt": "^5.0.2",
     "@types/cors": "^2.8.17",
     "@types/express": "^4.17.21",
@@ -38,6 +42,7 @@
     "nodemailer": "^6.9.13",
     "nodemon": "^3.1.0",
     "npm-watch": "^0.11.0",
+    "protobufjs": "^7.2.6",
     "sequelize": "^6.37.3",
     "winston": "^3.13.0",
     "winston-daily-rotate-file": "^5.0.0"
@@ -46,6 +51,7 @@
     "@eslint/js": "^9.0.0",
     "@typescript-eslint/eslint-plugin": "^7.7.0",
     "@typescript-eslint/parser": "^7.7.0",
+    "concurrently": "^8.2.2",
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",
     "globals": "^15.0.0",
@@ -59,5 +65,4 @@
       "pre-commit": "npm run prettier:check"
     }
   }
-  
 }

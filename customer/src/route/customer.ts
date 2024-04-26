@@ -1,40 +1,32 @@
-import userController from '../controller/customer'
-import validationMiddleware from '../utills/validations/validation'
+import { validateRequest, user, update, login, resetPassword, resetPasswordEmail, updatePassword } from '../utills/validations/validation';
+import customerController from '../controller/customer';
+import { Router } from 'express';
 
-const customerRoute = (app) => {
-  app.post(
-    '/createCustomer',
-    validationMiddleware,
-    userController.createCustomer,
-  )
-  app.put(
-    '/updateCustomer/:id',
-    validationMiddleware,
-    userController.updateCustomer,
-  )
-  app.delete(
-    '/delete/:id',
-    validationMiddleware,
-    userController.deleteCustomer)
 
-  app.get(
-    '/get', validationMiddleware,
-    userController.getCustomer)
+class allCustomerRoutes{
+  route = Router();
+  public customerRoute =new customerController();
+  constructor(){
+    this.initializeRoutes();
+  }
+  initializeRoutes(){
+    this.route.post('/',validateRequest(user),this.customerRoute.createCustomer);
 
-  app.post(
-    '/login', validationMiddleware,
-    userController.loginCustomer)
+    this.route.put('/:id',validateRequest(update),this.customerRoute.updateCustomer);
 
-  app.patch(
-    '/updatePassword/:id', validationMiddleware,
-    userController.updateCustomer)
+    this.route.delete('/:id',this.customerRoute.deleteCustomer);
 
-  app.post(
-    '/resetPasswordEmail', validationMiddleware,
-    userController.resetPasswordEmail)
+    this.route.get('/',this.customerRoute.getCustomer);
 
-  app.post(
-    '/resetPassword', validationMiddleware,
-    userController.resetPassword)
+    this.route.post('/login',validateRequest(login),this.customerRoute.loginCustomer);
+
+    this.route.patch('/updatePassword/:id',validateRequest(updatePassword),this.customerRoute.updateCustomer);
+
+    this.route.post('/resetPasswordEmail',validateRequest(resetPasswordEmail),this.customerRoute.resetPasswordEmail);
+
+    this.route.patch('/resetPassword',validateRequest(resetPassword),this.customerRoute.resetPassword);
+
+  }
 }
-export default customerRoute
+
+export default new allCustomerRoutes().route;

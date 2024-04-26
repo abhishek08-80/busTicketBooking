@@ -1,17 +1,20 @@
-import bcrypt from 'bcrypt'
+import bcrypt from 'bcrypt';
 import { ITokenDetail } from '../../utills/interface/interface';
 import jwt from 'jsonwebtoken';
-import { TOKEN_KEY } from '../../../env';
+import * as nodemailer from 'nodemailer';
+import dotenv from 'dotenv';
+dotenv.config();
 
-const saltRounds = 10
+
+const saltRounds = 10;
 
 export async function hashPassword(plainPassword: string) {
-  const salt = bcrypt.genSaltSync(saltRounds)
-  return bcrypt.hashSync(plainPassword, salt)
+  const salt = bcrypt.genSaltSync(saltRounds);
+  return bcrypt.hashSync(plainPassword, salt);
 }
 
 export async function comparePassword(plainPassword: string, hash: string) {
-  return await bcrypt.compareSync(plainPassword, hash)
+  return await bcrypt.compareSync(plainPassword, hash);
 }
 
 
@@ -26,7 +29,7 @@ export default class CommonFunction {
 
   async generateToken(data: ITokenDetail) {
     try {
-      const secret = TOKEN_KEY;
+      const secret = process.env.TOKEN_KEY;
       if (!secret) {
         throw new Error('JWT secret is not defined');
       }
@@ -41,3 +44,12 @@ export default class CommonFunction {
     }
   }
 }
+
+
+export const mailTransporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: 'abhishekawins@gmail.com',
+    pass: 'fwrz wkpu oori wpny',
+  },
+});

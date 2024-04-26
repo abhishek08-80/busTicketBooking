@@ -1,7 +1,7 @@
-import { DataTypes } from 'sequelize'
-import sequelize from '../config/dbConfig'
-import { Role } from '../utills/enums/enum'
-import {customer} from '../utills/interface/interface'
+import { DataTypes } from 'sequelize';
+import sequelize from '../config/dbConfig';
+import { Role } from '../utills/enums/enum';
+import {customer} from '../utills/interface/interface';
 
 
 customer.init(
@@ -73,15 +73,15 @@ customer.init(
     sequelize,
     modelName: 'customer',
   },
-)
+);
 
 sequelize
   .sync()
   .then(() => {
-    console.log('customer table linked successfully!')
+    console.log('customer table linked successfully!');
   })
   .catch((error) => {
-    console.error('Unable to create table: ', error)
-  })
+    console.error('Unable to create table: ', error);
+  });
 
-export default { customer }
+export default { customer };

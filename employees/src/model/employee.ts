@@ -1,7 +1,7 @@
-import { DataTypes } from 'sequelize'
-import sequelize from '../config/dbConfig'
-import { Role } from '../utills/enums/enum'
-import {employees} from '../utills/interface/interface'
+import { DataTypes } from 'sequelize';
+import sequelize from '../config/dbConfig';
+import { Role } from '../utills/enums/enum';
+import {employees} from '../utills/interface/interface';
 
 
 employees.init(
@@ -12,11 +12,11 @@ employees.init(
       primaryKey: true,
     },
     firstName: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(35),
       allowNull: false,
     },
     lastName: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(35),
       allowNull: false,
     },
     email: {
@@ -73,15 +73,15 @@ employees.init(
     sequelize,
     modelName: 'employees',
   },
-)
+);
 
 sequelize
   .sync()
   .then(() => {
-    console.log('employees table linked successfully!')
+    console.log('employees table linked successfully!');
   })
   .catch((error) => {
-    console.error('Unable to create table: ', error)
-  })
+    console.error('Unable to create table: ', error);
+  });
 
-export default { employees }
+export default { employees };

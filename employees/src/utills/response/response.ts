@@ -3,13 +3,13 @@ export const successResponse = (
   data: {},
   message = 'Success',
 ) => {
-  return { statusCode, data, message }
-}
+  return { statusCode, data, message };
+};
 
 export const failResponse = (
   statusCode: number,
   errorMessage: string,
   message = 'Fail',
 ) => {
-  return { statusCode, errorMessage, message }
-}
+  return { statusCode, errorMessage, message };
+};

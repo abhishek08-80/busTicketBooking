@@ -1,5 +1,5 @@
-import { Role } from '../enums/enum'
-import {  Model } from 'sequelize'
+import { Role } from '../enums/enum';
+import { Model } from 'sequelize';
 
 export interface ICustomerAttributes {
   id?: string
@@ -21,22 +21,22 @@ export interface ICustomerAttributes {
 }
 
 export class customer extends Model<ICustomerAttributes> implements ICustomerAttributes {
-  public id!: string
-  public email!: string
-  public password!: string
-  public firstName!: string
-  public lastName?: string
-  public address?: string
-  public Dob?: Date
-  public phoneNo!: number
-  public createdAt?: Date
-  public updatedAt?: Date
-  public deletedAt?: Date
-  public deletedBy?: string
-  public isDeleted?: boolean
-  public role?: Role
-  public otp?: number
-  public otpExpiration?: Date
+  public id!: string;
+  public email!: string;
+  public password!: string;
+  public firstName!: string;
+  public lastName?: string;
+  public address?: string;
+  public Dob?: Date;
+  public phoneNo!: number;
+  public createdAt?: Date;
+  public updatedAt?: Date;
+  public deletedAt?: Date;
+  public deletedBy?: string;
+  public isDeleted?: boolean;
+  public role?: Role;
+  public otp?: number;
+  public otpExpiration?: Date;
 }
 
 
