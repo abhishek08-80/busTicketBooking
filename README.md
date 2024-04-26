@@ -4,19 +4,25 @@ The Bus Ticket Booking Application is a comprehensive solution built using Node.
 It offers a user-friendly interface for booking bus tickets and managing reservations. 
 This application is designed to streamline the process of booking bus tickets for users while providing administrators with tools to manage routes, schedules, and customer data efficiently.
 
-Features
+Features:
 
 User Authentication: Secure user authentication system ensures the safety of user accounts and information.
 
 Ticket Booking: Users can search for available buses, view schedules, select seats, and book tickets seamlessly.
+
 Route Management: Administrators can manage bus routes, schedules, and fares through an intuitive interface.
+
 Reservation Management: Detailed reservation management system allows administrators to track and manage reservations effectively.
+
 Customer Support: Built-in customer support features enable users to get assistance and resolve issues promptly.
 
-Microservices Architecture with gRPC: The application is built using microservices architecture, utilizing gRPC for inter-service communication. This allows for better scalability, maintainability, and flexibility.
+Microservices Architecture with gRPC: The application is built using microservices architecture, utilizing gRPC for inter-service communication. 
+This allows for better scalability, maintainability, and flexibility.
 
 
-Technologies Used
+
+
+Technologies Used:
 
 Node.js: Backend server environment for running JavaScript code.
 Express: Web application framework for Node.js, simplifying the process of building robust web applications.
