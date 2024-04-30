@@ -48,8 +48,8 @@ export interface ICustomerUpdatePassword extends ICustomerAttributes {
 
 
 export interface ITokenDetail {
-  id: string,
-  firstName: string,
-  email: string,
-  role: Role
+  id?: string,
+  firstName?: string,
+  email?: string,
+  role?: Role
 }

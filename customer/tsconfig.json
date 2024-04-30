@@ -4,7 +4,7 @@
     "inlineSourceMap": true,
     "baseUrl": ".",
     "moduleResolution": "node",
-    "target": "es6",
+    "target": "es2017",
     "esModuleInterop": true,
     "lib": ["es2020", "dom", "esnext.asynciterable"],
     "module": "commonjs",

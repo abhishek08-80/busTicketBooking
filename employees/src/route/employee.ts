@@ -1,6 +1,8 @@
 import { validateRequest, user, update, login, resetPassword, resetPasswordEmail, updatePassword } from '../utills/validations/validation';
 import employeeController from '../controller/employee';
 import { Router } from 'express';
+import limiter from '../utills/middleware/rateLimiter';
+import auth from '../utills/middleware/verifyToken';
 
 
 class allEmployeeRoutes{
@@ -10,21 +12,21 @@ class allEmployeeRoutes{
     this.initializeRoutes();
   }
   initializeRoutes(){
-    this.route.post('/',validateRequest(user),this.employeeRoute.createEmployee);
+    this.route.post('/',validateRequest(user),limiter,this.employeeRoute.createEmployee);
 
-    this.route.put('/:id',validateRequest(update),this.employeeRoute.updateEmployee);
+    this.route.put('/:id',validateRequest(update),auth,limiter,this.employeeRoute.updateEmployee);
 
-    this.route.delete('/:id',this.employeeRoute.deleteEmployee);
+    this.route.delete('/:id',auth,limiter,this.employeeRoute.deleteEmployee);
 
-    this.route.get('/',this.employeeRoute.getEmployee);
+    this.route.get('/',limiter,this.employeeRoute.getEmployee);
 
-    this.route.post('/login',validateRequest(login),this.employeeRoute.loginEmployee);
+    this.route.post('/login',validateRequest(login),limiter,this.employeeRoute.loginEmployee);
 
-    this.route.patch('/updatePassword/:id',validateRequest(updatePassword),this.employeeRoute.changePassword);
+    this.route.patch('/updatePassword/:id',auth,validateRequest(updatePassword),limiter,this.employeeRoute.changePassword);
 
-    this.route.post('/resetPasswordEmail',validateRequest(resetPasswordEmail),this.employeeRoute.resetPasswordEmail);
+    this.route.post('/resetPasswordEmail',validateRequest(resetPasswordEmail),limiter,this.employeeRoute.resetPasswordEmail);
     
-    this.route.post('/resetPassword',validateRequest(resetPassword),this.employeeRoute.resetPassword);
+    this.route.post('/resetPassword',validateRequest(resetPassword),limiter,this.employeeRoute.resetPassword);
   }
 }
 

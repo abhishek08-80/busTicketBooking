@@ -1,27 +1,28 @@
 syntax = "proto3";
 
-package customer;
+package bookPackage;
 
-service CustomerService {
-  rpc CreateCustomer(CreateCustomerRequest) returns (CreateCustomerResponse);
+service Book {
+  rpc allBooks(voidNoParam) returns (bookItems);
+  rpc createBook(bookItem) returns (bookItem);
+  rpc readBook(bookId) returns (bookItem);
+  rpc updateBook(bookId) returns (bookItem);
+  rpc DeleteBook(bookId) returns (bookItem);
 }
 
-message CreateCustomerRequest {
-  string firstName = 1;
-  string lastName = 2;
-  string email = 3;
-  string password = 4;
-  string role = 5; 
-  string firstName = 6; 
-  string lastName = 7;
-  string address = 8;
-  date Dob = 9;
-  string phoneNo = 10;
+message voidNoParam {}
+
+message bookItem {
+  int32 id = 1;
+  string title = 2;
+  string author = 3;
+  string content = 4;
 }
 
-message CreateCustomerResponse {
-  string customerId = 1;
+message bookItems {
+  repeated bookItem items = 1;
 }
 
-// Define other request and response messages similarly
-
+message bookId {
+  int32 id = 1;
+}

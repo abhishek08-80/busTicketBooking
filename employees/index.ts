@@ -11,7 +11,7 @@ app.use(express.json());
 // Middleware for Helmet
 app.use(helmet());
 
-app.use('/employee',Routes);
+app.use('/employee', Routes);
 
 process.env.Port || 3002;
 

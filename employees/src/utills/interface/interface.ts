@@ -46,16 +46,9 @@ export class employees extends Model<IEmployeesAttributes> implements IEmployees
 }
 
 export interface ITokenDetail {
-  id: string,
-  firstName: string,
-  email: string,
-  role: Role
+  id?: string,
+  firstName?: string,
+  email?: string,
+  role?: Role
 }
 
-
-
-// export interface Requests {
-//   _id: string
-//   email: string
-//   role: string
-// }

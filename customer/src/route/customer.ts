@@ -1,30 +1,31 @@
 import { validateRequest, user, update, login, resetPassword, resetPasswordEmail, updatePassword } from '../utills/validations/validation';
 import customerController from '../controller/customer';
 import { Router } from 'express';
+import limiter from '../utills/middleware/rateLimiter';
+import auth from '../utills/middleware/verifyToken';
 
-
-class allCustomerRoutes{
+class allCustomerRoutes {
   route = Router();
-  public customerRoute =new customerController();
-  constructor(){
+  public customerRoute = new customerController();
+  constructor() {
     this.initializeRoutes();
   }
-  initializeRoutes(){
-    this.route.post('/',validateRequest(user),this.customerRoute.createCustomer);
+  initializeRoutes() {
+    this.route.post('/', validateRequest(user), limiter, this.customerRoute.createCustomer);
 
-    this.route.put('/:id',validateRequest(update),this.customerRoute.updateCustomer);
+    this.route.put('/:id', validateRequest(update), limiter, this.customerRoute.updateCustomer);
 
-    this.route.delete('/:id',this.customerRoute.deleteCustomer);
+    this.route.delete('/:id', limiter, this.customerRoute.deleteCustomer);
 
-    this.route.get('/',this.customerRoute.getCustomer);
+    this.route.get('/', limiter,auth, this.customerRoute.getCustomer);
 
-    this.route.post('/login',validateRequest(login),this.customerRoute.loginCustomer);
+    this.route.post('/login', validateRequest(login), limiter, this.customerRoute.loginCustomer);
 
-    this.route.patch('/updatePassword/:id',validateRequest(updatePassword),this.customerRoute.updateCustomer);
+    this.route.patch('/updatePassword/:id', validateRequest(updatePassword), limiter, this.customerRoute.updateCustomer);
 
-    this.route.post('/resetPasswordEmail',validateRequest(resetPasswordEmail),this.customerRoute.resetPasswordEmail);
+    this.route.post('/resetPasswordEmail', validateRequest(resetPasswordEmail), limiter, this.customerRoute.resetPasswordEmail);
 
-    this.route.patch('/resetPassword',validateRequest(resetPassword),this.customerRoute.resetPassword);
+    this.route.patch('/resetPassword', validateRequest(resetPassword), limiter, this.customerRoute.resetPassword);
 
   }
 }

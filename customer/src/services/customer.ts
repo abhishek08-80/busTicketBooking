@@ -185,7 +185,7 @@ export default class customer {
         return 'userDoesNotExists'; // Return message if user doesn't exist
       }
       console.log(existingUser);
-      const isMatch = await comparePassword(oldPassword, existingUser.password);
+      const isMatch = await comparePassword(oldPassword , existingUser.password);
       if (!isMatch) {
         return 'oldPasswordIncorrect'; // Return message if old password is incorrect
       }
@@ -205,7 +205,7 @@ export default class customer {
 
     try {
       const { email, otp, newPassword, confirmPassword } = data;
-
+  
       if (newPassword !== confirmPassword) {
         return 'newPassword!== confirmPassword';
       }
