@@ -17,45 +17,11 @@ const employeeProto: any = grpc.loadPackageDefinition(packageDefinition);
 
 const server = new grpc.Server();
 
-const users = [
-    {
-        name: 'abhi',
-        email: 'abhi@gmail.com',
-        age: 22,
-    },
-    {
-        name: 'rajneshwar',
-        email: 'rajneshwar@gmail.com',
-        age: 25,
-    },
-];
-const posts = [
-    {
-        title: 'first post',
-        Image: 'abc.png',
-    },
-    {
-        title: 'first post',
-        Image: 'abc.png',
-    },
-];
 
 export function empServer() {
     console.log("In___________")
     server.addService(employeeProto.EmployeeService.service, {
-        getUsers: (_, callback) => {
-            callback(null, { users });
-        },
-        getPosts: (_, callback) => {
-            callback(null, { posts });
-        },
-        addUser: (call, callback) => {
-            const user = call.request;
-
-            users.push(user);
-
-            callback(null, user);
-        },
+       
         // validEmployee: async (call, callback) => { 
         //     const employeeId = call.request.id; 
         //     console.log("call ", call.request)
