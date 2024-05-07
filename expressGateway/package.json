@@ -1,0 +1,17 @@
+{
+  "name": "expressgateway",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "pm2 start server.js --name=Gateway",
+    "all": "npx nx run-many --target=serve --all --maxParallel=100"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express-gateway": "^1.16.11",
+    "pm2": "^5.3.1"
+  }
+}

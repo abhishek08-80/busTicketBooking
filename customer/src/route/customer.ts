@@ -16,10 +16,10 @@ class allCustomerRoutes {
     this.route.put('/:id', validateRequest(update), limiter, this.customerRoute.updateCustomer);
 
     this.route.delete('/:id', limiter, this.customerRoute.deleteCustomer);
-
-    this.route.get('/', limiter,auth, this.customerRoute.getCustomer);
-
+    
     this.route.post('/login', validateRequest(login), limiter, this.customerRoute.loginCustomer);
+    
+    this.route.get('/', this.customerRoute.getCustomer);
 
     this.route.patch('/updatePassword/:id', validateRequest(updatePassword), limiter, this.customerRoute.updateCustomer);
 

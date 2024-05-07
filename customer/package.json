@@ -9,7 +9,10 @@
     "dev": "nodemon index.js",
     "prettier": "prettier --write .",
     "prettier:check": "prettier --check .",
-    "build": "tsc"
+    "build": "tsc",
+    "startBuild": "npm run build && node .dist/index.js",
+    "serve": "pm2 start .dist/index.js --name=customerModule",
+    "all": "npx nx run-many --target=serve --all --maxParallel=100"
   },
   "keywords": [],
   "author": "Abhishek",
@@ -46,6 +49,7 @@
     "nodemailer": "^6.9.13",
     "nodemon": "^3.1.0",
     "npm-watch": "^0.11.0",
+    "pm2": "^5.3.1",
     "protobufjs": "^7.2.6",
     "sequelize": "^6.37.3",
     "winston": "^3.13.0",

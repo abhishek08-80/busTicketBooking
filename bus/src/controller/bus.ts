@@ -3,31 +3,30 @@ import { Request, Response } from 'express';
 import { successResponse, failResponse } from '../utills/response/response';
 import { statusCode, message } from '../utills/response/constrant';
 import logger from '../utills/logger/logger';
-import customer from '../services/bus';
+import bus from '../services/bus';
 
 
 
 export default class busController {
 
-  async createBus(req: Request, res: Response) {
+  public static async createBus(req: Request, res: Response) {
     try {
-      const data = await new customer().createBusService(req.body);
-      // if (data == 'userAlreadyExist') {
-      if (data ) {
-
+      const data:any = await bus.createBusService(req.body);
+      if (data == 'employeeDoesNotExist') {
+      // if (data ) {
         res
           .status(statusCode.badRequest)
           .json(
             failResponse(
               statusCode.badRequest,
               // data,
-              message.alreadyExist('User'),
+              message.notExist('Employee'),
             ),
           );
       } else {
         res
           .status(statusCode.success)
-          .json(successResponse(statusCode.success, data, message.add('User')));
+          .json(successResponse(statusCode.success, data, message.add('Bus')));
       }
     } catch (err) {
       logger.error(message.errorLog('userAdd', 'userController', err));
@@ -43,9 +42,9 @@ export default class busController {
     }
   }
 
-  async deleteBus(req: Request, res: Response) {
+  public static async deleteBus(req: Request, res: Response) {
     try {
-      const data = await new customer().deleteBusService(req.params);
+      const data = await bus.deleteBusService(req.params);
       if (data == 'userDoesNotExist') {
         res
           .status(statusCode.badRequest)
@@ -53,7 +52,7 @@ export default class busController {
             successResponse(
               statusCode.badRequest,
               data,
-              message.alreadyExist('User'),
+              message.notExist('Bus'),
             ),
           );
       } else {
@@ -75,42 +74,31 @@ export default class busController {
     }
   }
 
-  async updateBus(req: Request, res: Response) {
+  public static async updateBus(req: Request, res: Response) {
     try {
       const data = req.body;
-      const CustomerId: string = req.params.id;
+      const busId: string = req.params.id;
 
-      const customerData = await new customer().updateBusService(
+      const busData = await bus.updateBusService(
         data,
-        CustomerId
+        busId
       );
-      if (customerData) {
+      if (busData == 'busDoesNotExist') {
         res
           .status(statusCode.badRequest)
           .json(
             failResponse(
               statusCode.badRequest,
               data,
-              message.notExist('User'),
+              message.notExist('bus'),
             ),
           );
       }
-      // else if (customerData == 'emailAlreadyTaken') {
-      //   res
-      //     .status(statusCode.notFound)
-      //     .json(
-      //       failResponse(
-      //         statusCode.notAllowed,
-      //         data,
-      //         message.alreadyExist('User'),
-      //       ),
-      //     );
-      // }
-      // else {
-      //   res
-      //     .status(statusCode.success)
-      //     .json(successResponse(statusCode.success, data, message.update('User')));
-      // }
+      else {
+        res
+          .status(statusCode.success)
+          .json(successResponse(statusCode.success, data, message.update('Bus')));
+      }
     } catch (err) {
       logger.error(message.errorLog('userUpdate', 'userController', err));
       res
@@ -126,9 +114,9 @@ export default class busController {
   }
 
 
-  async getBus(req: Request, res: Response) {
+  public static async getBus(req: Request, res: Response) {
     try {
-      const data = await new customer().getBusService();
+      const data = await bus.getBusService();
       if (data == 'userDoesNotExist') {
         res
           .status(statusCode.notFound)

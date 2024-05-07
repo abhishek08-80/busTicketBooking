@@ -8,7 +8,7 @@ dotenv.config();
 const app: Express = express();
 app.use(express.json());
 
-app.use('/customer', Routes);
+app.use('/bus', Routes);
 process.env.Port || 3003;
 // Middleware for CORSa
 app.use(cors());

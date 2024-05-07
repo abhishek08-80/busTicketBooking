@@ -3,6 +3,7 @@ import dotenv from 'dotenv';
 import Routes from './src/route/customer';
 import cors from 'cors';
 import helmet from 'helmet';
+// import client from './src/grpc/index'
 dotenv.config();
 
 
@@ -19,7 +20,18 @@ app.use(cors());
 app.use(helmet());
 
 
-
+// app.get("/", (req, res) => {
+//   client.getUsers(null, (err, data) => {
+//     if (!err) {
+//       res.send(data);
+//     } else {
+//       console.log(err);
+//       res.send({
+//         message: "there was some error",
+//       });
+//     }
+//   });
+// });
 
 
 app.listen(process.env.Port, () => {

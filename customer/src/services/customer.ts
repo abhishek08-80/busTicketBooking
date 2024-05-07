@@ -13,6 +13,8 @@ import { ITokenDetail } from 'src/utills/interface/interface';
 import jwt from 'jsonwebtoken';
 const commonFun = new CommonFunction(jwt); // Creating an instance of CommonFunction class with JWT
 
+import client from "../grpc"
+
 // Defining and exporting the customer service class
 export default class customer {
 
@@ -119,8 +121,25 @@ export default class customer {
   // Service method to get customer details
   async getCustomerService() {
     try {
+
+      console.log("I am in +++++++++++")
       const user = await userModel.customer.findAll({
         limit: 2,
+      });
+
+      // client.getUsers(null, (err, data) => {
+      //   console.log("data", data)
+      //   console.log("err", err)
+      // });
+      const id = 'e86a5047-5a35-40fa-9c4c-52c55590f492'
+      client.validEmployee({ id }, (err, data) => {
+        console.log("data", data) 
+        console.log("err", err)
+        if(data= 'userDoesNotExist'){
+          return 'userDoesNotExist'
+        }else{
+          return data
+        }
       });
       if (!user) {
         return 'userDoesNotExist'; // Return message if no user found
@@ -185,7 +204,7 @@ export default class customer {
         return 'userDoesNotExists'; // Return message if user doesn't exist
       }
       console.log(existingUser);
-      const isMatch = await comparePassword(oldPassword , existingUser.password);
+      const isMatch = await comparePassword(oldPassword, existingUser.password);
       if (!isMatch) {
         return 'oldPasswordIncorrect'; // Return message if old password is incorrect
       }
@@ -205,7 +224,7 @@ export default class customer {
 
     try {
       const { email, otp, newPassword, confirmPassword } = data;
-  
+
       if (newPassword !== confirmPassword) {
         return 'newPassword!== confirmPassword';
       }

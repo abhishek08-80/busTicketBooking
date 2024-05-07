@@ -9,9 +9,9 @@ import employee from '../services/employee';
 export default class employeeController {
 
   // function for adding new employee
-  async createEmployee(req: Request, res: Response) {
+ public static async createEmployee(req: Request, res: Response) {
     try {
-      const data = await new employee().createEmployeeService(req.body);
+      const data = await employee.createEmployeeService(req.body);
       if (data == 'userAlreadyExist') {
         res
           .status(statusCode.badRequest)
@@ -42,9 +42,9 @@ export default class employeeController {
   }
 
   // funtion for deleteing employee 
-  async deleteEmployee(req: Request, res: Response) {
+  public static async deleteEmployee(req: Request, res: Response) {
     try {
-      const data = await new employee().deleteEmployeeService(req.params);
+      const data = await employee.deleteEmployeeService(req.params);
       if (data == 'userDoesNotExist') {
         res
           .status(statusCode.badRequest)
@@ -75,12 +75,12 @@ export default class employeeController {
   }
 
   // function fir updating employee details except for password
-  async updateEmployee(req: Request, res: Response) {
+  public static async updateEmployee(req: Request, res: Response) {
     try {
       const data = req.body;
       const EmployeeId: string = req.params.id;
 
-      const customerData = await new employee().updateEmployeeService(
+      const customerData = await employee.updateEmployeeService(
         data,
         EmployeeId,
       );
@@ -128,12 +128,12 @@ export default class employeeController {
   }
 
   // function for updating password for employee
-  async changePassword(req: Request, res: Response) {
+  public static async changePassword(req: Request, res: Response) {
     try {
       const data = req.body;
       const CustomerId: string = req.params.id;
 
-      const customerData = await new employee().changePasswordService(
+      const customerData = await employee.changePasswordService(
         data,
         CustomerId,
       );
@@ -177,11 +177,11 @@ export default class employeeController {
   }
 
   // function for resetting password for employee through otp 
-  async resetPassword(req: Request, res: Response) {
+  public static async resetPassword(req: Request, res: Response) {
     try {
       const data = req.body;
 
-      const customerData = await new employee().resetPasswordService(data);
+      const customerData = await employee.resetPasswordService(data);
       if (customerData == 'newPassword!== confirmPassword') {
         res
           .status(statusCode.badRequest)
@@ -226,11 +226,11 @@ export default class employeeController {
   }
 
   // function for sending otp through email for employee
-  async resetPasswordEmail(req: Request, res: Response) {
+  public static async resetPasswordEmail(req: Request, res: Response) {
     try {
       const data = req.body;
 
-      const customerData = await new employee().resetPasswordEmailService(data);
+      const customerData = await employee.resetPasswordEmailService(data);
       if (customerData == 'userDoesNotExists') {
         res
           .status(statusCode.badRequest)
@@ -254,10 +254,40 @@ export default class employeeController {
     }
   }
 
-  // function for getting all employee
-  async getEmployee(req: Request, res: Response) {
+  public static async getEmployeeById(req: Request, res: Response) {
     try {
-      const data = await new employee().getAllService();
+      const Data = req.params.id
+      const data = await employee.getEmployeeByIdService(Data);
+      if (data == 'userDoesNotExist') {
+        res
+          .status(statusCode.notFound)
+          .json(
+            failResponse(statusCode.badRequest, data, message.notExist('User')),
+          );
+      } else {
+        res
+          .status(statusCode.success)
+          .json(successResponse(statusCode.success, data, message.fetch('User')));
+      }
+    } catch (err) {
+      logger.error(message.errorLog('userAdd', 'userController', err));
+      res
+        .status(statusCode.badRequest)
+        .json(
+          failResponse(
+            statusCode.badRequest,
+            err.message,
+            message.somethingWrong,
+          ),
+        );
+    }
+  }
+
+
+  // function for getting all employee
+  public static async getEmployee(req: Request, res: Response) {
+    try {
+      const data = await employee.getAllService();
       if (data == 'userDoesNotExist') {
         res
           .status(statusCode.notFound)
@@ -284,9 +314,9 @@ export default class employeeController {
   }
 
   // function for employee to login and generate token
-  async loginEmployee(req: Request, res: Response) {
+  public static async loginEmployee(req: Request, res: Response) {
     try {
-      const data = await new employee().loginEmployeeService(req.body);
+      const data = await employee.loginEmployeeService(req.body);
       if (data == 'userDoesNotExist') {
         res
           .status(statusCode.notFound)

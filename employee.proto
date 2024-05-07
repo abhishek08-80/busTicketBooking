@@ -1,0 +1,37 @@
+syntax ="proto3";
+
+service EmployeeService {
+    rpc addUser(User) returns (User){}
+    rpc getUsers(Empty) returns (Users){}
+    rpc getPosts(Empty) returns (Posts){}
+    rpc validEmployee(employeeId) returns (employeeDetails) {}
+};
+message employeeId {
+    optional string id = 1;
+}; 
+
+message employeeDetails {
+//    optional string firstName = 1;
+   optional string id = 2;
+   optional string email = 1;
+}
+
+message User {
+    optional string name = 1;
+    optional string email = 2;
+    optional int32 age = 3;
+}; 
+message Post {
+    optional string title = 1;
+    optional string Image = 2;
+}; 
+message Empty {
+
+};
+
+message Users {
+   repeated User users = 1;
+}
+message Posts {
+    repeated Post posts = 1;
+ }

@@ -1,23 +1,15 @@
 import { validateRequest, user, update } from '../utills/validations/validation';
 import busController from '../controller/bus';
 import { Router } from 'express';
+import express from 'express'
 
+const router = express.Router()
 
-class allCustomerRoutes{
-  route = Router();
-  public busRoute =new busController();
-  constructor(){
-    this.initializeRoutes();
-  }
-  initializeRoutes(){
-    this.route.post('/',validateRequest(user),this.busRoute.createBus);
+  // router.post('/',validateRequest(user),busController.createBus);
+  router.post('/',busController.createBus);
+  router.put('/:id',validateRequest(update),busController.updateBus);
+  router.delete('/:id',busController.deleteBus);
+  router.get('/',busController.getBus);
+  
 
-    this.route.put('/:id',validateRequest(update),this.busRoute.updateBus);
-
-    this.route.delete('/:id',this.busRoute.deleteBus);
-
-    this.route.get('/',this.busRoute.getBus);
-  }
-}
-
-export default new allCustomerRoutes().route;
+  export default router

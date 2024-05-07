@@ -15,11 +15,10 @@ const commonFun = new CommonFunction(jwt);
 
 
 
-
 export default class employee {
 
   // function for adding new employee
-  async createEmployeeService(data: IEmployeesAttributes) {
+  public static async createEmployeeService(data: IEmployeesAttributes) {
     try {
       const email: string = data.email;
       const user = await userModel.employees.findOne({
@@ -55,7 +54,7 @@ export default class employee {
   }
 
   // function for updating employee service except for password
-  async updateEmployeeService(data: IEmployeesAttributes, CustomerId: string) {
+  public static async updateEmployeeService(data: IEmployeesAttributes, CustomerId: string) {
     try {
       const newEmail: string = data.email;
       const password: string = data.password;
@@ -96,7 +95,7 @@ export default class employee {
 
 
   // delete employee service
-  async deleteEmployeeService(data) {
+  public static async deleteEmployeeService(data) {
     try {
       const user = await userModel.employees.findByPk(data.id);
 
@@ -116,8 +115,11 @@ export default class employee {
   }
 
   // function for getting all the employees
-  async getAllService() {
+  public static async getAllService() {
     try {
+
+
+      
       const user = await userModel.employees.findAll({
         limit: 2,
       });
@@ -132,7 +134,21 @@ export default class employee {
     }
   }
 
-  async loginEmployeeService(data: IEmployeesAttributes) {
+  public static async getEmployeeByIdService(data:string) {
+    try {
+      const user = await userModel.employees.findByPk(data);
+      if (!user) {
+        return 'userDoesNotExist';
+      } else {
+        return user;
+      }
+    } catch (err) {
+      logger.error(err);
+      throw new Error(err.message);
+    }
+  }
+
+  public static async loginEmployeeService(data: IEmployeesAttributes) {
     try {
       const { email, password } = data;
       const user = await userModel.employees.findOne({
@@ -166,7 +182,7 @@ export default class employee {
   }
 
   // function for changing password
-  async changePasswordService(data: IEmployeeUpdatePassword, customerId: string) {
+  public static async changePasswordService(data: IEmployeeUpdatePassword, customerId: string) {
 
     try {
       const { oldPassword, newPassword, confirmPassword } = data;
@@ -197,7 +213,7 @@ export default class employee {
   }
 
   // function for reset password
-  async resetPasswordService(data: IEmployeeUpdatePassword) {
+  public static async resetPasswordService(data: IEmployeeUpdatePassword) {
 
     try {
       const { email, otp, newPassword, confirmPassword } = data;
@@ -250,7 +266,7 @@ export default class employee {
   }
 
   // function for sending otp through mail for employee
-  async resetPasswordEmailService(data: IEmployeesAttributes) {
+  public static async resetPasswordEmailService(data: IEmployeesAttributes) {
 
     try {
       const { email } = data;

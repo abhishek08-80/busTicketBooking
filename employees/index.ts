@@ -3,13 +3,15 @@ import express, { Express } from 'express';
 import dotenv from 'dotenv';
 import Routes from './src/route/employee';
 import cors from 'cors';
-import helmet from 'helmet';
+import { empServer } from './src/grpc'
+// import grpc from '@grpc/grpc-js';
+// import helmet from 'helmet';
 dotenv.config();
-
+empServer()
 const app: Express = express();
 app.use(express.json());
 // Middleware for Helmet
-app.use(helmet());
+// app.use(helmet());
 
 app.use('/employee', Routes);
 
