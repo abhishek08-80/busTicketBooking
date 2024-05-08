@@ -14,7 +14,6 @@ echo "Starting the employees module..."
 cd employees || exit
 rm -rf node_modules
 rm -f package-lock.json
-npm install
 npm run start &
 npm run serve &
 
@@ -23,7 +22,6 @@ echo "Starting the customer module..."
 cd ../customer || exit
 rm -rf node_modules
 rm -f package-lock.json
-npm install
 npm run start &
 npm run serve &
 
@@ -32,7 +30,6 @@ echo "Starting the bus module..."
 cd ../bus || exit
 rm -rf node_modules
 rm -f package-lock.json
-npm install
 npm run start &
 npm run serve &
 
@@ -41,7 +38,6 @@ echo "Starting the Gateway Module..."
 cd ../express-gateway || exit
 rm -rf node_modules
 rm -f package-lock.json
-npm install
 npm run serve &
 
 
@@ -50,7 +46,6 @@ start_module() {
     cd "$1" || exit
     rm -rf node_modules
     rm -f package-lock.json
-    npm install
     npm run build &
     npm run serve &
     cd ..
