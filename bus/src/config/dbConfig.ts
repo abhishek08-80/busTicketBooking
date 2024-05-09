@@ -1,11 +1,14 @@
-import { Sequelize } from 'sequelize';
+import { Dialect, Sequelize } from 'sequelize';
 import dotenv from 'dotenv';
+
 dotenv.config()
 
 
 const sequelize = new Sequelize(process.env.DATABASE, process.env.dbUsername, process.env.dbPassword, {
+  // host: 'localhost',
+  // dialect: 'mysql',
   host: process.env.host,
-  dialect: 'mysql',
+  dialect: process.env.dialect as Dialect,
 });
 
 sequelize

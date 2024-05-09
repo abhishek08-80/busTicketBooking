@@ -4,6 +4,12 @@ The Bus Ticket Booking Application is a comprehensive solution built using Node.
 It offers a user-friendly interface for booking bus tickets and managing reservations. 
 This application is designed to streamline the process of booking bus tickets for users while providing administrators with tools to manage routes, schedules, and customer data efficiently.
 
+Project Run Commands
+Do npm i in everyone module to download all the packages required to this application for this you should be running node v20
+Make the bash script executable: chmod +x nodeServe.sh
+Run the bash script: ./nodeServe.sh
+
+
 Features:
 
 User Authentication: Secure user authentication system ensures the safety of user accounts and information.
@@ -37,11 +43,3 @@ Software required for running the Application:
 i. Mysql server 
 ii. Node v20 
 iii. Postman(for testing Api)
-
-How to run the Project
-
-1.First do npm i to download all the packages required to this application for this you should be running node v20
-
-2.then run index.ts file by running command npm start on the terminal
-
-3.after that check the connectivity of server, it should say Connection has been established successfully and Server is running on port
