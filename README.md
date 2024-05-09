@@ -5,9 +5,9 @@ It offers a user-friendly interface for booking bus tickets and managing reserva
 This application is designed to streamline the process of booking bus tickets for users while providing administrators with tools to manage routes, schedules, and customer data efficiently.
 
 Project Run Commands
-Do npm i in everyone module to download all the packages required to this application for this you should be running node v20
-Make the bash script executable: chmod +x nodeServe.sh
-Run the bash script: ./nodeServe.sh
+1. Do npm i in everyone module to download all the packages required to this application for this you should be running node v20
+2. Make the bash script executable: chmod +x nodeServe.sh
+3. Run the bash script: ./nodeServe.sh
 
 
 Features:
