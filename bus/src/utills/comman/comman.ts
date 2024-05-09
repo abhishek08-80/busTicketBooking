@@ -1,9 +1,7 @@
 import bcrypt from 'bcrypt';
-import { ITokenDetail } from '../../utills/interface/interface';
 import jwt from 'jsonwebtoken';
 import * as nodemailer from 'nodemailer';
-import dotenv from 'dotenv';
-dotenv.config();
+
 
 const saltRounds = 10;
 
@@ -26,7 +24,7 @@ export default class CommonFunction {
 
 
 
-  async generateToken(data: ITokenDetail) {
+  async generateToken(data) {
 
     const secret = process.env.TOKEN_KEY;
     if (!secret) {

@@ -10,8 +10,6 @@ export interface IEmployeesAttributes {
   phoneNo?: number
   email: string
   password: string
-  createdAt?: Date
-  updatedAt?: Date
   deletedAt?: Date
   deletedBy?: string
   isDeleted?: boolean
@@ -35,8 +33,6 @@ export class employees extends Model<IEmployeesAttributes> implements IEmployees
   public address?: string;
   public Dob?: Date;
   public phoneNo!: number;
-  public createdAt?: Date;
-  public updatedAt?: Date;
   public deletedAt?: Date;
   public deletedBy?: string;
   public isDeleted?: boolean;

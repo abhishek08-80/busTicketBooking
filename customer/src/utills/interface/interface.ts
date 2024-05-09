@@ -10,8 +10,6 @@ export interface ICustomerAttributes {
   phoneNo?: number
   email: string
   password: string
-  createdAt?: Date
-  updatedAt?: Date
   deletedAt?: Date
   deletedBy?: string
   isDeleted?: boolean
@@ -29,8 +27,6 @@ export class customer extends Model<ICustomerAttributes> implements ICustomerAtt
   public address?: string;
   public Dob?: Date;
   public phoneNo!: number;
-  public createdAt?: Date;
-  public updatedAt?: Date;
   public deletedAt?: Date;
   public deletedBy?: string;
   public isDeleted?: boolean;

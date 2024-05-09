@@ -2,8 +2,7 @@ const PROTO_PATH = '../../../employee.proto';
 import * as grpc from '@grpc/grpc-js';
 import * as protoLoader from '@grpc/proto-loader';
 import path from "path"
-console.log('newpath++++++++++++++', path.resolve(__dirname, PROTO_PATH))
-import employee from '../services/employee'
+import employee from '../services/employeeServices'
 
 
 const packageDefinition = protoLoader.loadSync(path.resolve(__dirname, PROTO_PATH), {
@@ -19,9 +18,8 @@ const server = new grpc.Server();
 
 
 export function empServer() {
-    console.log("In___________")
     server.addService(employeeProto.EmployeeService.service, {
-       
+
         // validEmployee: async (call, callback) => { 
         //     const employeeId = call.request.id; 
         //     console.log("call ", call.request)
@@ -63,7 +61,7 @@ export function empServer() {
         grpc.ServerCredentials.createInsecure(),
         () => {
             server.start();
-            console.log('server started on port 127.0.0.1:30053');
+            console.log('gRPC server started on port 127.0.0.1:30053');
         }
     );
 }

@@ -13,3 +13,8 @@ export enum places {
   jaipur = 'jaipur',
   ludhiana = 'ludhiana',
 }
+export enum Role {
+  Admin = 'Admin',
+  Staff = 'Staff',
+  Customer = 'Customer'
+}

@@ -2,10 +2,10 @@ import bcrypt from 'bcrypt';
 import { ITokenDetail } from '../../utills/interface/interface';
 import jwt from 'jsonwebtoken';
 import * as nodemailer from 'nodemailer';
-import dotenv from 'dotenv';
-dotenv.config();
+import dotenv from 'dotenv'
+dotenv.config()
 
-const saltRounds = 10;
+const saltRounds = parseInt(process.env.SaltRounds);
 
 export async function hashPassword(plainPassword: string) {
   const salt = bcrypt.genSaltSync(saltRounds);
@@ -42,9 +42,9 @@ export default class CommonFunction {
 
 
 export const mailTransporter = nodemailer.createTransport({
-  service: 'gmail',
+  service: process.env.NODEMAILER_SERVICE,
   auth: {
-    user: 'abhishekawins@gmail.com',
-    pass: 'fwrz wkpu oori wpny',
+    user: process.env.NODEMAILER_USER,
+    pass: process.env.NODEMAILER_PASS,
   },
 });

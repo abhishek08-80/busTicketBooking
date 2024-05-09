@@ -1,30 +1,32 @@
 import joi from 'joi';
+import { places } from '../enums/enum';
 
-export const user = joi.object({
-  firstName: joi.string().required().min(3).max(35),
-  lastName: joi.string().required().min(3).max(35),
-  Dob: joi.date().optional(),
-  email: joi.string().email().required(),
-  password: joi.string().required().min(6).regex(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/,
-    'password'),
-  phoneNo: joi.string().optional().length(10).pattern(/[6-9]{1}[0-9]{9}/),
-  address: joi.string().required(),
+export const createBus = joi.object({
+  from: joi.string().valid(...Object.values(places)).required(),
+  to: joi.string().valid(...Object.values(places)).required(),
+  totalSeats: joi.number().required(),
+  date: joi.date().iso().required(),
+  time: joi.string().regex(/^([01]\d|2[0-3]):([0-5]\d):([0-5]\d)$/).required(),
+  employeeId: joi.string().required(),
+  price: joi.number().required(),
 });
 
-export const login = joi.object({
-  email: joi.string().email().required(),
-  password: joi.string().required(),
+export const deleteBus = joi.object({
+  id: joi.string().required()
 });
 
-export const update = joi.object({
-  firstName: joi.string().optional().min(3).max(35),
-  lastName: joi.string().optional().min(3).max(35),
-  Dob: joi.date().optional(),
-  email: joi.string().email().optional(),
-  phoneNo: joi.string().optional().length(10).pattern(/[6-9]{1}[0-9]{9}/),
-  address: joi.string().optional(),
+export const updateBus = joi.object({
+  from: joi.string().valid(...Object.values(places)).optional(),
+  to: joi.string().valid(...Object.values(places)).optional(),
+  totalSeats: joi.number().optional(),
+  date: joi.date().iso().optional(),
+  time: joi.string().regex(/^([01]\d|2[0-3]):([0-5]\d):([0-5]\d)$/).optional(),
+  price: joi.number().optional(),
 });
 
+export const getBusById = joi.object({
+  id: joi.string().required()
+});
 
 export const updatePassword = joi.object({
   email: joi.string().email().required(),
@@ -35,17 +37,6 @@ export const updatePassword = joi.object({
     'password'),
 });
 
-export const resetPassword = joi.object({
-  email: joi.string().email().required(),
-  newPassword: joi.string().required().min(6).regex(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/,
-    'password'),
-  confirmPassword: joi.string().required().min(6).regex(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/,
-    'password'),
-});
-
-export const resetPasswordEmail = joi.object({
-  email: joi.string().email().required(),
-});
 
 
 export const validateRequest = (schema) => {

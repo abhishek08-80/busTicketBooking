@@ -7,6 +7,7 @@ export const message = {
   invalidlogin: 'Invalid login credentials. Please check and try again.',
   invalidRequest: 'Invalid request. Please check and try again.',
   otpExpired: 'OTP Expired, Please generate new OTP',
+  inValidToken: 'Invalid token',
 
 
   add: (labal: string) => {

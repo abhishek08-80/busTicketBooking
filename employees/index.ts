@@ -1,7 +1,7 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import express, { Express } from 'express';
 import dotenv from 'dotenv';
-import Routes from './src/route/employee';
+import Routes from './src/route/employeeRoutes';
 import cors from 'cors';
 import { empServer } from './src/grpc'
 // import grpc from '@grpc/grpc-js';

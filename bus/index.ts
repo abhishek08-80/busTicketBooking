@@ -1,6 +1,6 @@
 import express, { Express } from 'express';
 import dotenv from 'dotenv';
-import Routes from './src/route/bus';
+import Routes from './src/route/busRoutes';
 import cors from 'cors';
 import helmet from 'helmet';
 dotenv.config();
@@ -19,4 +19,3 @@ app.use(helmet());
 app.listen(process.env.Port, () => {
   console.log(`Server is running on ${process.env.Port}`);
 });
- 

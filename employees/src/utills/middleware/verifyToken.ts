@@ -1,11 +1,12 @@
-import { ITokenDetail } from '../interface/interface';
+import { ITokenDetail } from '../../../../employees/src/utills/interface/interface';
 import jwt, { JwtPayload } from 'jsonwebtoken';
 import { Response } from 'express';
 import { IncomingHttpHeaders } from 'http';
-const TOKEN_KEY = '2345678909876543rthjkjhgf';
 import dotenv from 'dotenv';
-
-dotenv.config();
+import logger from '../logger/logger'
+import { statusCode, message } from '../response/constrant';
+import { successResponse, failResponse } from '../response/response';
+dotenv.config()
 
 
 export const extractBearerToken = (headers?: IncomingHttpHeaders): string | undefined => {
@@ -14,8 +15,8 @@ export const extractBearerToken = (headers?: IncomingHttpHeaders): string | unde
     const rawAuthorization = headers.authorization;
     if (
       rawAuthorization &&
-            typeof rawAuthorization === 'string' &&
-            rawAuthorization.startsWith('Bearer ')
+      typeof rawAuthorization === 'string' &&
+      rawAuthorization.startsWith('Bearer ')
     ) {
       token = rawAuthorization.split('Bearer ')[1];
     }
@@ -25,9 +26,9 @@ export const extractBearerToken = (headers?: IncomingHttpHeaders): string | unde
 
 // Define type for req.headers
 interface CustomRequest {
-    headers?: IncomingHttpHeaders; // Use IncomingHttpHeaders type for headers
-    user?: ITokenDetail;
-    authorization?: string;
+  headers?: IncomingHttpHeaders; // Use IncomingHttpHeaders type for headers
+  user?: ITokenDetail;
+  authorization?: string;
 }
 
 export default async function authenticate(
@@ -41,13 +42,22 @@ export default async function authenticate(
     if (!token) {
       return res.status(401).json({ error: 'Unauthorized', code: 401 });
     }
-    const decode = jwt.verify(token, TOKEN_KEY) as JwtPayload;
+    const decode = jwt.verify(token, process.env.TOKEN_KEY) as JwtPayload;
     req.user = {
       id: decode?.id as string, // Safely access 'id' property
       email: decode?.email,
     };
     return next();
-  } catch (error: any) {
-    return res.status(401).json({ message: error.message, error: 'Unauthorized', code: 401 });
-  }
+  } catch (err) {
+    logger.error(message.errorLog('authMiddleware', 'authMiddleware',err));
+     res
+   .status(statusCode.unauthorized)
+   .json(
+     failResponse(
+       statusCode.badRequest,
+       err.message,
+       message.inValidToken,
+     ),
+   );
+ }
 }

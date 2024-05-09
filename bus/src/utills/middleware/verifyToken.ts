@@ -1,13 +1,12 @@
 import { ITokenDetail } from '../interface/interface';
-import jwt, { JwtPayload } from 'jsonwebtoken';
+import jwt, { JwtPayload, Secret } from 'jsonwebtoken';
 import { Response } from 'express';
 import { IncomingHttpHeaders } from 'http';
-import dotenv from 'dotenv';
-dotenv.config()
 import logger from '../logger/logger'
 import { statusCode, message } from '../response/constrant';
 import { successResponse, failResponse } from '../response/response';
-
+import dotenv from 'dotenv';
+dotenv.config()
 
 export const extractBearerToken = (headers?: IncomingHttpHeaders): string | undefined => {
   let token;
@@ -42,7 +41,7 @@ export default async function authenticate(
     if (!token) {
       return res.status(401).json({ error: 'Unauthorized', code: 401 });
     }
-    const decode = jwt.verify(token, process.env.TOKEN_KEY) as JwtPayload;
+    const decode = jwt.verify(token, process.env.TOKEN_KEY as Secret) as JwtPayload;
     req.user = {
       id: decode?.id as string, // Safely access 'id' property
       email: decode?.email,
