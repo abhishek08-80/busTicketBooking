@@ -1,0 +1,16 @@
+syntax ="proto3";
+
+service BusService {
+    rpc validBus(busId) returns (busDetails) {}
+};
+message busId {
+    optional string id = 1;
+}; 
+
+message busDetails {
+   optional string id = 2;
+   optional string email = 1;
+}
+message Empty {
+
+};

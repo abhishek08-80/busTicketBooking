@@ -13,7 +13,6 @@ import { ITokenDetail } from 'src/utills/interface/interface';
 import jwt from 'jsonwebtoken';
 const commonFun = new CommonFunction(jwt); // Creating an instance of CommonFunction class with JWT
 
-import client from "../grpc/clientIndex"
 
 // Defining and exporting the customer service class
 export default class customer {
@@ -127,11 +126,11 @@ export default class customer {
     }
   }
 
-  public static async getEmployeeByIdService(data: string) {
+  public static async getCustomerByIdService(data: string) {
     try {
       const user = await userModel.customer.findByPk(data);
       if (!user) {
-        return 'userDoesNotExist';
+        return 'customerDoesNotExist';
       } else {
         return user;
       }

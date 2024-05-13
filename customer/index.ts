@@ -3,13 +3,14 @@ import Routes from './src/route/customerRoutes';
 import cors from 'cors';
 import helmet from 'helmet';
 import dotenv from 'dotenv';
+import { empServer } from './src/server/server';
 dotenv.config();
-
+empServer();
 const app: Express = express();
 app.use(express.json());
 
 app.use('/customer', Routes);
-process.env.Port || 3001;
+process.env.Port || 3002;
 // Middleware for CORSa
 app.use(cors());
 

@@ -1,0 +1,26 @@
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "inlineSourceMap": true,
+    "baseUrl": ".",
+    "moduleResolution": "node",
+    "target": "es6",
+    "esModuleInterop": true,
+    "lib": ["es2020", "dom", "esnext.asynciterable"],
+    "module": "commonjs",
+    "outDir": ".dist/",
+    "declaration": true,
+    "noUnusedLocals": false,
+    "paths": {},
+    "types": ["node"]
+  },
+  "include": [
+    "*.ts",
+    "*.tsx",
+    "src/app.ts",
+    "src/index.ts",
+    "src/env.ts",
+    "src/eslint.config.js"
+  ],
+  "exclude": ["node_modules", "test/*", "dist/*"]
+}

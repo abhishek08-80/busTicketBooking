@@ -1,0 +1,16 @@
+syntax ="proto3";
+
+service CustomerService {
+    rpc validCustomer(CustomerId) returns (CustomerDetails) {}
+};
+message CustomerId {
+    optional string id = 1;
+}; 
+
+message CustomerDetails {
+   optional string id = 2;
+   optional string email = 1;
+}
+message Empty {
+
+};
