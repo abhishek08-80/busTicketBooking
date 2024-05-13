@@ -15,7 +15,7 @@ app.use(express.json());
 
 app.use('/employee', Routes);
 
-process.env.Port || 3002;
+process.env.Port || 3001;
 
 // Middleware for CORS
 app.use(cors());

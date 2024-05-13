@@ -14,6 +14,7 @@ echo "Starting the employees module..."
 cd employees || exit
 rm -rf node_modules
 rm -f package-lock.json
+# npm install
 npm run start &
 npm run serve &
 
@@ -30,42 +31,37 @@ echo "Starting the bus module..."
 cd ../bus || exit
 rm -rf node_modules
 rm -f package-lock.json
+# npm install
 npm run start &
 npm run serve &
 
 # Start My-Gateway
 echo "Starting the Gateway Module..."
-cd ../express-gateway || exit
+cd ../expressGateway || exit
 rm -rf node_modules
 rm -f package-lock.json
+npm run start &
 npm run serve &
 
+# Start # Start ticketBooking
+echo "Starting the ticketBooking Module..."
+cd ../ticketBooking || exit
+rm -rf node_modules
+rm -f package-lock.json
+npm install
+npm run start &
+npm run serve &
 
-start_module() {
-    echo "Start the $1 module."
-    cd "$1" || exit
-    rm -rf node_modules
-    rm -f package-lock.json
-    npm run build &
-    npm run serve &
-    cd ..
-}
-
-# Clear the running ports
-echo "Clearing running ports."
-pm2 stop all
-pm2 delete all
-fuser -k 3003/tcp 
-fuser -k 3002/tcp 
-fuser -k 3001/tcp 
-fuser -k 1000/tcp 
-
-# Start each module
-start_module "bus"
-start_module "customer"
-start_module "employees"
-start_module "expressGateway"
+# Start # Start feedback
+echo "Starting the feedback Module..."
+cd ../feedback || exit
+rm -rf node_modules
+rm -f package-lock.json
+npm install
+npm run start &
+npm run serve &
 
 echo "All modules started."
+
 
 

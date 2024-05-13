@@ -8,17 +8,28 @@ http:
 apiEndpoints:
   bus:
     host: 'localhost'
-    paths: "/v1/bus/*"
+    paths: "/bus/*"
     methods: ["GET", "POST", "PUT", "DELETE"]
 
   customer:
     host: 'localhost'
-    paths: "/v1/customer/*"
+    paths: "/customer/*"
     methods: ["GET", "POST", "PUT", "DELETE"]
 
     employees:
     host: 'localhost'
-    paths: "/v1/employees/*"
+    paths: "/employees/*"
+    methods: ["GET", "POST", "PUT", "DELETE"]
+
+    ticketBooking:
+    host: 'localhost'
+    paths: "/ticketBooking/*"
+    methods: ["GET", "POST", "PUT", "DELETE"]
+
+    
+    feedback:
+    host: 'localhost'
+    paths: "/feedback/*"
     methods: ["GET", "POST", "PUT", "DELETE"]
 
 # serviceEndpoints
@@ -31,6 +42,12 @@ serviceEndpoints:
 
   employeesService:
     url: "http://localhost:3001/"
+
+  ticketBookingService:
+    url: "http://localhost:3004/"
+
+  feedbackService:
+    url: "http://localhost:3005/"
 
 
 # policies
@@ -96,4 +113,39 @@ pipelines:
       - proxy:
           - action:
               serviceEndpoint: employeesService
+              changeOrigin: true
+
+
+
+    ticketBookingPipeline:
+    apiEndpoints:
+      - ticketBooking
+    policies:
+      - cors:
+          - action:
+              origin: '*'
+              methods: 'GET,PUT,PATCH,POST,DELETE'
+      - log:
+          - action: 
+              message: ${req.method} ${req.originalUrl}
+      - proxy:
+          - action:
+              serviceEndpoint: TicketBookingService
+              changeOrigin: true
+
+
+    feedbackPipeline:
+    apiEndpoints:
+      - feedback
+    policies:
+      - cors:
+          - action:
+              origin: '*'
+              methods: 'GET,PUT,PATCH,POST,DELETE'
+      - log:
+          - action: 
+              message: ${req.method} ${req.originalUrl}
+      - proxy:
+          - action:
+              serviceEndpoint: FeedbackService
               changeOrigin: true

@@ -295,7 +295,7 @@ export default class customerController {
   public static async getCustomerById(req: Request, res: Response) {
     try {
       const Data = req.params.id
-      const data = await customer.getEmployeeByIdService(Data);
+      const data = await customer.getCustomerByIdService(Data);
       if (data == 'userDoesNotExist') {
         res
           .status(statusCode.notFound)
